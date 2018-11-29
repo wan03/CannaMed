@@ -21,7 +21,7 @@ Jason and Joao - Front-end
 
 We expect to use:
 
-HTML, CSS, JQuery, Materialize CSS, NodeJs, Express, Passport and potentially other technologies. We will use GitHub for project management. 
+HTML, CSS, JQuery, Materialize CSS, NodeJs, Express, Sequelize, APIs, Passport and potentially other technologies. We will use GitHub for project management. 
 
 ## Breakdown of Task
 
