@@ -63,3 +63,4 @@ typings/
 # extra
 .DS_Store
 .env
+dataset/
