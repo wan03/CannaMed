@@ -1,6 +1,9 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+var methodOverride = require("method-override");
+var passport = require('passport');
+var Strategy = require('passport-facebook').Strategy;
 
 var db = require("./models");
 
