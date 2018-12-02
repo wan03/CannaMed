@@ -1,4 +1,3 @@
-require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 var passport = require("passport");
@@ -8,6 +7,7 @@ var flash = require("connect-flash");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
+require("dotenv").config();
 require("./config/passport")(passport);
 
 // Middleware
@@ -47,6 +47,7 @@ app.set("view engine", "handlebars");
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 require("./routes/loginRoutes")(app, passport);
+require("./config/passport.js")(passport, db.users);
 
 var syncOptions = { force: false };
 
