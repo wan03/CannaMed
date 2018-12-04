@@ -8,6 +8,13 @@
     "plugins": [
         "prettier"
       ],
+      
+    "parserOptions": {
+              "ecmaVersion": 6,
+              "sourceType": "module"
+          },
+
+      
     "rules": {
         "no-duplicate-case":"error",
         "no-empty":"error",

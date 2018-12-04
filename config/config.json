@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "strains_db",
+    "database": "strains_dbtest",
     "host": "localhost",
     "dialect": "mysql"
   },

@@ -1,30 +1,28 @@
-module.exports = function(app) {
-  app.get("/profile", function(req, res) {
-    res.render("profile", { user: req.user });
-  });
+const authController = require("../controllers/authcontroller.js");
 
-  app.get("/login", function(req, res) {
-    res.render("login");
-  });
-
+module.exports = function(app, passport) {
+  app.get("/signup", authController.signup);
+  app.get("/signin", authController.signin);
   app.post(
-    "/login",
-    passport.authenticate("local", { failureRedirect: "/login" }),
-    function(req, res) {
-      res.redirect("/");
-    }
+    "/signup",
+    passport.authenticate("local-signup", {
+      successRedirect: "/dashboard",
+      failureRedirect: "/signup"
+    })
   );
-
-  app.get("/logout", function(req, res) {
-    req.logout();
-    res.redirect("/");
-  });
-
-  app.get(
-    "/profile",
-    require("connect-ensure-login").ensureLoggedIn(),
-    function(req, res) {
-      res.render("profile", { user: req.user });
-    }
+  app.get("/dashboard", isLoggedIn, authController.dashboard);
+  app.get("/logout", authController.logout);
+  app.post(
+    "/signin",
+    passport.authenticate("local-signin", {
+      successRedirect: "/dashboard",
+      failureRedirect: "/signin"
+    })
   );
+  function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+      return next();
+    }
+    res.redirect("/signin");
+  }
 };
