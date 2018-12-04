@@ -18,88 +18,223 @@
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-company-blue">
-  <a class="navbar-brand" href="index.html"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
 
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="search.html">Search</a>
-      </li>
-      
-      <li class="nav-item">
-          <a class="nav-link" href="recipes.html">Edible Recipes</a>
-        </li>
-      <li class="nav-item">
-        <a class="nav-link" href="dashboard.html">Intro</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="profile.html">Data</a>
-        </li>
-    </ul>
-    <span class="navbar-text">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light"
+       >
 
-    </span>
-  </div>
-</nav>
+          <a class="navbar-brand" href="#"> <!----- CSS STYLE -->
+            <img src="https://via.placeholder.com/65" alt="..." class="img-thumbnail rounded-circle">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav mr-auto mx-auto">
+
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              
+              <li class="nav-item">
+                      <a class="nav-link" href="#">Link #2</a>
+              </li>
+
+              <li class="nav-item">
+                      <a class="nav-link" href="#">Link #3</a>
+              </li>
+
+          </ul>
+          </div>
+          </nav>
+        
+
+<section class="jumbotron" id="main_jumbotron"> <!---- CSS STYLE  ---->
+<div class="container row">
+<div class="col-10 text-center">
+  <h1 class="jumbotron-heading">xample</h1>
+  <p class="lead text-muted">Sout not too short so folks don't simply skip over it entirely.</p>
+</div>
+
+<div class="col-2 float-right" id="jumbotron_login"> <!----- CSS STYLE ----->
+   <form class="text-center">
+    <div class="form-group col-form-label-sm">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control col-form-label-sm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+    <div class="form-group col-form-label-sm">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control col-form-label-sm" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+   </form>
+</div>
+</div>
+</section>              
 
 
-<div class="jumbotron text-center">
-    <img src="images/logo.jpg" alt="Image">
-  <h4>A simple & easy way to get <br>
-    the  information you need</h4>
+
+<!----- HARD LINE (there was one here)-->
+
+<div class="row justify-content-around"> 
+
+<div class="col-sm-2 float-left" id="menu">
+<div class="card" id="menu_card"> <!------CSS STYLE ----->
+
+<div class="card-header">
+  <h4> Menu </h4>
+</div>
+
+<div class="card-body">
+  <ul class="list-unstyled">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Recipes</a></li>
+    <li><a href="#">Strains</a></li>
+    <li><a href="#">Login</a></li>
+    <li><a href="#">Users</a></li>
+    <li><a href="#">Non-User</a></li>
+    <li><a href="#">Articles</a></li>
+  </ul>
+</div>
 
 </div>
-<br>
+
+</div>
+
+
+<div class="col-lg-8" id="featured">  <!---- CSS STYLE --->
+  <div class="card">
+      <div class="card-header text-center">
+          <h1>Featured Strains!</h1>
+      </div>
+      
+   <div class="card-body">     
+      <div class="row">
+
+            <div class="col-sm-3">
+            <div class="card text-center">
+              <div class="card-body">
+                  <img src="https://via.placeholder.com/150" alt="..." class="img-thumbnail" id="featured_img1">
+
+                <h5 class="card-title" id="featured_name1">Name</h5>
+                <p class="card-text" id="featured_bio1">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary" id="featured_btn1">Go</a>
+              </div>
+            </div>
+          </div>
+
+            <div class="col-sm-3">
+            <div class="card text-center">
+              <div class="card-body">
+                  <img src="https://via.placeholder.com/150" alt="..." class="img-thumbnail" id="featured_img2">
+
+                <h5 class="card-title" id="featured_name2">Name</h5>
+                <p class="card-text" id="featured_bio2">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary" id="featured_btn2">Go</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="card text-center">
+              <div class="card-body">
+                  <img src="https://via.placeholder.com/150" alt="..." class="img-thumbnail" id="featured_img3">
+
+                <h5 class="card-title" id="featured_name3">Name</h5>
+                <p class="card-text" id="featured_bio3">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary" id="featured_btn3">Go</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="card text-center">
+              <div class="card-body">
+                  <img src="https://via.placeholder.com/150" alt="..." class="img-thumbnail" id="featured_img4">
+
+                <h5 class="card-title" id="featured_name4">Name</h5>
+                <p class="card-text" id="featured_bio4">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary" id="featured_btn4">Go</a>
+              </div>
+            </div>
+          </div>
+
+      </div><!---row /div-->
+    </div>
+        
+
+</div>              
+</div>  <!--- main card /div --> 
+  
+<div class="col-sm-2 float-right" id="article">
+<div class="card" id="article_card" > <!------CSS STYLE----->
+
+<div class="card-header">
+<h4> Articles </h4>
+</div>
+<div class="card-body">
+
+<ul class="list-unstyled">
+<li>
+  <p id="article_title1"><b>Article Title</b></p>
+   <p class="article_text" id="article_text1"> <!----CSS STYLE-->
+
+    Article Preview blah blah blahbew blah blah blahbew blah 
+    blah blahbew blah blah blahbew blah blah blahbew blah bl
+    ah blahbew blah blah blahbew blah blah blahblah blah bla
+    hblah blah blah</p>
+    <a href="#" id="article_link1">Read More...</a>
+</li>
+
+<hr>
+
+<li>
+<p id="article_title1"><b>Article Title</b></p>
+<p class="article_text" id="article_text1"> 
+
+Article Preview blah blah blahbew blah blah blahbew blah 
+blah blahbew blah blah blahbew blah blah blahbew blah bl
+ah blahbew blah blah blahbew blah blah blahblah blah bla
+hblah blah blah</p>
+<a href="#" id="article_link1">Read More...</a>
+</li>
+
+<hr>
+
+<li>
+<p id="article_title1"><b>Article Title</b></p>
+<p class="article_text" id="article_text1"> 
+
+Article Preview blah blah blahbew blah blah blahbew blah 
+blah blahbew blah blah blahbew blah blah blahbew blah bl
+ah blahbew blah blah blahbew blah blah blahblah blah bla
+hblah blah blah</p>
+<a href="#" id="article_link1">Read More...</a>
+</li>
+
+</ul>
+</div>
+
+</div>
+</div>
+
+</div> <!---- ROW /div -->
+
+<hr>
 
 <div class="container">
-  <div class="container text-center">
-  
-  <div class="row">
-      <div class="col-lg-4">
-          <a href=".html">
-            <img border="0" alt="strain" src="images/strain.png?raw=true" width="295" height="295">
-    
-        </div>
-        
-    <div class="col-lg-4">
-      <a href=".html">
-        <img border="0" alt="strain" src="images/strain.png?raw=true" width="295" height="295">
-
-    </div>
-    <div class="col-lg-4">
-      <a href="stats.html">
-        <img border="0" alt="strain" src="images/strain.png?raw=true" width="295" height="295">
-
-    </div>
-  
-
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-lg-12">
-    <img src="images/recipes.png" alt="navigate" id="navigatepic">
-  </div>
-  </div>
-</div>
-</div>
-<br>
-<br>
-<br>
+<footer class="text-center text-white">
+<p>Chippi Chippi 2018</p> 
 
 
+</footer>
 
 
-
-
-<div class="footer">
-  <p> &copy  2018 . All Rights Reserved. </p>
 </div>
 </body>
 
