@@ -62,7 +62,7 @@ db.sequelize
       );
     });
   })
-  .catch(function(error){
+  .catch(function(error) {
     console.error(error);
   });
 
