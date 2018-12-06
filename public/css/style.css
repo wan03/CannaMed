@@ -1,219 +1,127 @@
-#flight-div{
-font-size: 25px;
-font-family: Broadway;
-color:  black;
-padding-top: 40px;
-margin-bottom: 40px;
-}
+
 
 body{
-   background-image: url("https://amazingpict.com/wp-content/uploads/2014/04/Sky-Clouds-from-Plane-Wallpaper.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: right;
-    margin:0;
-}
-.container-fluid {text-align: center;
-  display: block;
-  padding: 10px;
-  width: 70%;
+  background-image: url("https://amazingpict.com/wp-content/uploads/2014/04/Sky-Clouds-from-Plane-Wallpaper.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: right;
+   margin:0;
+   
 }
 
-.form-control{
-  width:50%
+
+
+
+
+
+
+
+
+
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: transparent;
+   color: white;
+   text-align: center;
 }
 
-.airport_search_container{
-  align-items: center;
-  padding-left:20px;
-}
-.img{
-  padding-bottom: 10px;
-}
 
-.timeToArriveResults{
-  background-color: lightgrey;
-  width: 95%;
-  border-width: 15px;
-  position: relative;
-  border-style: solid;
-  border-color: rgb(81, 106, 155);
-  border-image: initial;
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-}
-
-.jumbotron{
-  background: none;
-  background: transparent;
-  padding-bottom:0px;
-  margin-bottom: 0px;
-  
-}
-
-.form-group{
-  color:white;
-}
-
-  .container{ 
-    padding: 10px;
-  }
-    
-    /* Set black background color, white text and some padding */
-
-    .panel-body a {
-      word-break: break-all;
-    }
-
-    .articleHeadline {
-      line-height: 1.5;
-    }
-    .header{
-        height: 80px;
-  background-color: grey;  }
-
-  .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #516A9B;
-    color: white;
-    text-align: center;
-}
-
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.navbar a:hover {
-  background: #ddd;
-  color: black;
-}
 
 .main {
-  padding: 16px;
-  margin-top: 30px;
-  height: 1500px; /* Used in this example to enable scrolling */
-}
-
-.bg-company-blue {
-  background-color: #516A9B;
-}
-
-       
-.epic{
-  text-align: center;
-}
-
-p{text-align: center;
-font: 200;
-color: white;}
-
-.box {
-  padding: 0 5px 0 5px;
-}
-.box .inner {
-  background-color: #fff;
-}
-
-.teamMember, .img-responsive, #teamMate {
-  background-color: lightgrey;
-  width: 250px;
-  height: 90%;
-  border-width: 15px;
-  position: relative;
-  border-style: solid;
-  border-color: rgb(81, 106, 155);
-  border-image: initial;
-  padding: 15px;
-  margin: 15px;
-  float: left;
-}
-
-.teamMemberName{
-  font-size: 24px;
-  color: rgb(81, 106, 155);
-  background-color: lightgray;
-  width: 100%;
-  height: 100%
-}
-
-#github{
-  margin: 40px;
- 
-  
-}
-
-.form-group,.form-control{
-  text-align: center;
-  font: 800;
-  font:bold;
-  color: #000;
-  
-  font:  sans-serif;
-       margin: 0 auto;  width:58vw
-}
-
-h5{
-  text-align:center;
-}
-
-#navigatepic{
-  align-items: center;
-  width:50%;
-  height:100%
+ padding: 16px;
+ margin-top: 30px;
+ height: 1500px; /* Used in this example to enable scrolling */
 }
 
 
+
+      
+
+
+
+
+/**-----**/
+
+
+
+.navbar-brand{
+ position : absolute;
+  top : 5px;
+}
+
+#main_jumbotron{
+ background-color: white;
+}
+
+#jumbotron_login{
+ border-color: #f7f7f7;
+ border-style: solid;
+ padding-bottom: 10px;
+ padding-top: 10px;
+}
+
+#menu_card{
+ border-color: red;
+ margin-left: 10px;
+}
+
+#featured{
+ padding: 0px;
+}
+
+#article_card{
+ border-color: blue;
+ margin-right: 10px;
+}
+
+.article_text{
+ text-overflow: ellipsis;
+ display: inline-block;
+ overflow: hidden;
+ max-height: 75px;
+ max-width: 150px;
+ margin-bottom: 0px;
+}
+
+/**-------**/
 
 
 
 @media (min-width: 1025px) and (max-width: 1280px) {
-  
-  //CSS
-  
+ 
+ //CSS
+ 
 }
 
 
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  
-  
+ 
+ 
 }
 
 
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  
-  
+ 
+ 
 }
 
 
 
 @media (min-width: 481px) and (max-width: 767px) {
-  
-  
+ 
+ 
 }
 
 
 
 @media (min-width: 320px) and (max-width: 480px) {
-  
-  
-  
+ 
+ 
+ 
 }
