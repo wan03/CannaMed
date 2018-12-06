@@ -1,5 +1,5 @@
 module.exports = function(sequelize, Sequelize) {
-  var User = sequelize.define("user", {
+  const User = sequelize.define("user", {
     id: {
       autoIncrement: true,
       primaryKey: true,
@@ -7,7 +7,8 @@ module.exports = function(sequelize, Sequelize) {
     },
 
     username: {
-      type: Sequelize.TEXT
+      type: Sequelize.TEXT,
+      allowNull: false
     },
 
     password: {
@@ -20,6 +21,13 @@ module.exports = function(sequelize, Sequelize) {
       defaultValue: "active"
     }
   });
+  Users.associate = (models) => {
+    Users.belongsToMany(models.Favorite, {
+      through: "UserFavorite",
+      as: "favorite",
+      foreignKey: "userId"
+    });
+  };
 
   return User;
 };
