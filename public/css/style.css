@@ -4,6 +4,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
   }
   
+ 
   .clearfix::after{
     content: "";
     display: block;
@@ -27,7 +28,7 @@ body {
    left: 0;
    bottom: 0;
    width: 100%;
-   background-color: transparent;
+   background-color: greenyellow;
    color: white;
    text-align: center;
 }
@@ -58,12 +59,23 @@ body {
 
 /**-----**/
 
+canvas {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -9999;
+
+}
 
 
 .navbar-brand{
  position : absolute;
   top : 5px;
-}
+  }
+
 
 #main_jumbotron{
  background-color: white;
@@ -99,13 +111,89 @@ body {
  margin-bottom: 0px;
 }
 
-/**-------**/
+.social-container {
+  text-align: center;
+  max-width: 250px;
+}
+
+
+@mixin social-container($color) {
+  .social-cube {
+    .front, .back {
+      background: $color;
+    }
+    .bottom {
+      background: darken($color, 10%);
+    }
+  }
+  &:hover .social-cube {
+    .bottom {
+      background: $color;
+    }
+    .front {
+      background: lighten($color, 10%);
+    }
+  }
+}
+
+
+.social-container {
+  position: relative;
+  display: inline-block;
+  width: 164px;
+  height: 30px;
+  perspective: 300px;
+  font-size: 24px;
+  margin: 8px;
+  background-color: #3b5998;
+}
+  .social-cube {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.333s;
+    transform: translateZ(-18px);
+  }
+    .front, .bottom {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      transition:  0.333s;
+    }
+
+    .front {
+      transform: rotateX(0deg) translateZ(18px);
+    }
+    .bottom {
+      transform: rotateX(-90deg) translateZ(18px);
+    }
+  
+  
+  :hover .social-cube {
+    transform: translateZ(-18px) rotateX(90deg);
+  }
+
+
+
+
+
+
+  /**-------**/
 
 
 
 @media (min-width: 1025px) and (max-width: 1280px) {
  
- //CSS
+ 
  
 }
 
