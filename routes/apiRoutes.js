@@ -8,7 +8,7 @@ module.exports = app => {
     });
   });
 
-  // TODO Create a new favorite/user association
+  // Create User/Favorite association
   app.post("/api/userFavorite/create", (req, res) => {
     var faveId = req.body.favid;
     var user = req.body.username;
@@ -22,7 +22,7 @@ module.exports = app => {
     });
   });
 
-  // TODO Get favorites and users.
+  // Get favorites and users.
   app.get("/api/userFavorite/:id", (req, res) => {
     db.User.findOne({
       where: { id: req.params.id },
@@ -39,13 +39,17 @@ module.exports = app => {
     });
   });
 
-  // TODO Remove a favorite/user association
-  app.post("/api/userFavorite", function(req, res) {
-    db.User.removeFavorite({
-      // TODO here too
-      where: {
-        id: req.body.id
-      }
-    }).then(res.end());
+  // Remove a favorite/user association
+  app.post("/api/userFavorite/remove", (req, res) => {
+    var faveId = req.body.favid;
+    var user = req.body.username;
+    return db.User.findOne({ where: { username: user } }).then(foundUser => {
+      var userToAdd = foundUser;
+      return db.Favorite.findOne({ where: { favoriteid: faveId } }).then(
+        favorite => {
+          return favorite.removeUser(userToAdd).then(res.end());
+        }
+      );
+    });
   });
 };

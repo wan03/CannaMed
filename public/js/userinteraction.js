@@ -1,67 +1,82 @@
 const $createFavoriteBtn = $(".create_favorite");
 
-const API = {
-  createFavorite: id => {
-    return $.post({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "/api/userFavorite",
-      data: JSON.stringify(id)
+const API = require("./userinteractionapi");
+
+module.exports = userInteraction = {
+  refreshStrains: () => {
+    API.getStrains().then(function(data) {
+      // TODO Figure out how to structure this
+      var $examples = data.map(function(example) {
+        var $a = $("<a>")
+          .text(example.text)
+          .attr("href", "/example/" + example.id);
+
+        var $li = $("<li>")
+          .attr({
+            class: "list-group-item",
+            "data-id": example.id
+          })
+          .append($a);
+
+        var $button = $("<button>")
+          .addClass("btn btn-danger float-right delete")
+          .text("ｘ");
+
+        $li.append($button);
+
+        return $li;
+      });
+
+      $exampleList.empty();
+      $exampleList.append($examples);
     });
   },
-  getFavorite: id => {
-    return $.get({
-      url: "/api/userFavorite/" + id
+
+  refreshFavorites: () => {
+    API.getFavorites().then(function(data) {
+      // TODO Figure out how to structure this
+      var $examples = data.map(function(example) {
+        var $a = $("<a>")
+          .text(example.text)
+          .attr("href", "/example/" + example.id);
+
+        var $li = $("<li>")
+          .attr({
+            class: "list-group-item",
+            "data-id": example.id
+          })
+          .append($a);
+
+        var $button = $("<button>")
+          .addClass("btn btn-danger float-right delete")
+          .text("ｘ");
+
+        $li.append($button);
+
+        return $li;
+      });
+
+      $exampleList.empty();
+      $exampleList.append($examples);
     });
   },
-  removeFavorite: () => {
-    console.log("somthing");
+
+  handleCreateFavorite: () => {
+    var favoriteUser = {
+      id: this.id,
+      username: this.username
+    };
+    API.createFavorite(favoriteUser).then(() => {
+      refreshFavorites();
+    });
   },
-  getStrains: function(id) {
-    return $.get({
-      url: "/api/strains" + id
+  handleRemoveFavorite: () => {
+    var favoriteUser = {
+      id: this.id,
+      username: this.username
+    };
+    API.createFavorite(favoriteUser).then(() => {
+      refreshFavorites();
     });
   }
 };
-
-var refreshStrains = () => {
-  API.getStrains().then(function(data) {
-    // TODO Figure out how to structure this
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
-
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
-
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
-    });
-
-    $exampleList.empty();
-    $exampleList.append($examples);
-  });
-};
-
-var handleCreateFavorite = () => {
-  var favoriteID = {
-    id: this.id
-  };
-  API.saveExample(favoriteID).then(() => {
-    refreshStrains();
-  });
-};
-
-$createFavoriteBtn.on("click", handleCreateFavorite);
