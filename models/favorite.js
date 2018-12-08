@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
     id: {
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     name: DataTypes.STRING,
     image: DataTypes.STRING,
@@ -16,11 +16,5 @@ module.exports = function(sequelize, DataTypes) {
     thc: DataTypes.INTEGER,
     cbd: DataTypes.INTEGER
   });
-  // eslint-disable-next-line prettier/prettier
-  Favorite.associate = (models) => {
-    Favorite.belongsToMany(models.User, {
-      through: "UserFavorite"
-    });
-  };
   return Favorite;
 };

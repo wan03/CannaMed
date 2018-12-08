@@ -1,23 +1,23 @@
-module.exports = function(sequelize, Sequelize) {
-  const User = sequelize.define("user", {
+module.exports = function(sequelize, DataTypes) {
+  const User = sequelize.define("User", {
     id: {
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
 
     username: {
-      type: Sequelize.TEXT,
+      type: DataTypes.TEXT,
       allowNull: false
     },
 
     password: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
 
     status: {
-      type: Sequelize.ENUM("active", "inactive"),
+      type: DataTypes.ENUM("active", "inactive"),
       defaultValue: "active"
     }
   });
