@@ -3,14 +3,16 @@ module.exports = function(sequelize, DataTypes) {
     id: {
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     name: DataTypes.STRING,
     image: DataTypes.STRING,
     type: DataTypes.STRING,
-    breeder: DataTypes.STRING,
-    effects: DataTypes.STRING,
+    location: DataTypes.STRING,
+    feelings: DataTypes.STRING,
     ailment: DataTypes.STRING,
+    url: DataTypes.STRING,
+    image: DataTypes.STRING,
     flavor: DataTypes.STRING,
     thc: DataTypes.INTEGER,
     cbd: DataTypes.INTEGER

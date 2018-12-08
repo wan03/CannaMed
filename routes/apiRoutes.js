@@ -1,26 +1,74 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
+  // Get all strains
   app.get("/api/strains", function(req, res) {
-    db.Strains.findAll({}).then(function(dbStrains) {
-      res.json(dbStrains);
+    db.Favorite.findAll({}).then(function(dbFavorites) {
+      res.json(dbFavorites);
+    });
+  });
+  
+  // TODO Create a new favorite/user association
+  app.post("/api/userFavorite/create", function(req, res) {
+    var faveId = req.body.favid;
+    var user = req.body.username;
+    return db.User.findOne({ where: { username: user } }).then(foundUser => {
+      var userToAdd = foundUser;
+      return db.Favorite.findOne({ where: { favoriteid: faveId } }).then(
+        favorite => {
+          return favorite.addUser(userToAdd).then(res.end());
+        }
+      );
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  // TODO Get favorites and users.
+  app.get("/api/userFavorite/:id", function(req, res) {
+    db.User.findOne({
+      where: { id: req.params.id },
+      include: [
+        {
+          model: db.Favorite
+        }
+      ]
+    }).then(users => {
+      res.json(users.dataValues);
+  //     Object.keys(users.dataValues).map(user => {
+  //       return Object.assign(
+  //         {},
+  //         {
+  //           userId: user.id,
+  //           userName: user.username,
+  //           favorite: user.favorite.map(post => {
+  //             return Object.assign(
+  //               {},
+  //               {
+  //                 name: favorite.name,
+  //                 image: favorite.image,
+  //                 type: favorite.type,
+  //                 location: favorite.location,
+  //                 feelings: favorite.feelings,
+  //                 ailment: favorite.ailment,
+  //                 url: favorite.url,
+  //                 flavor: favorite.flavor,
+  //                 thc: favorite.thc,
+  //                 cbd: favorite.cbd
+  //               }
+  //             );
+  //           })
+  //         }
+  //       );
+  //     });
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.json(dbExample);
-    });
+  // TODO Remove a favorite/user association
+  app.post("/api/userFavorite", function(req, res) {
+    db.User.removeFavorite({
+      // TODO here too
+      where: {
+        id: req.body.id
+      }
+    }).then(res.end());
   });
 };
