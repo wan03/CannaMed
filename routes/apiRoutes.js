@@ -1,15 +1,15 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = app => {
   // Get all strains
   app.get("/api/strains", function(req, res) {
     db.Favorite.findAll({}).then(function(dbFavorites) {
       res.json(dbFavorites);
     });
   });
-  
+
   // TODO Create a new favorite/user association
-  app.post("/api/userFavorite/create", function(req, res) {
+  app.post("/api/userFavorite/create", (req, res) => {
     var faveId = req.body.favid;
     var user = req.body.username;
     return db.User.findOne({ where: { username: user } }).then(foundUser => {
@@ -23,9 +23,12 @@ module.exports = function(app) {
   });
 
   // TODO Get favorites and users.
-  app.get("/api/userFavorite/:id", function(req, res) {
+  app.get("/api/userFavorite/:id", (req, res) => {
     db.User.findOne({
       where: { id: req.params.id },
+      attributes: {
+        exclude: ["password", "createdAt", "updatedAt"]
+      },
       include: [
         {
           model: db.Favorite
@@ -33,32 +36,6 @@ module.exports = function(app) {
       ]
     }).then(users => {
       res.json(users.dataValues);
-  //     Object.keys(users.dataValues).map(user => {
-  //       return Object.assign(
-  //         {},
-  //         {
-  //           userId: user.id,
-  //           userName: user.username,
-  //           favorite: user.favorite.map(post => {
-  //             return Object.assign(
-  //               {},
-  //               {
-  //                 name: favorite.name,
-  //                 image: favorite.image,
-  //                 type: favorite.type,
-  //                 location: favorite.location,
-  //                 feelings: favorite.feelings,
-  //                 ailment: favorite.ailment,
-  //                 url: favorite.url,
-  //                 flavor: favorite.flavor,
-  //                 thc: favorite.thc,
-  //                 cbd: favorite.cbd
-  //               }
-  //             );
-  //           })
-  //         }
-  //       );
-  //     });
     });
   });
 
