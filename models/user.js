@@ -21,8 +21,7 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: "active"
     }
   });
-  // eslint-disable-next-line prettier/prettier
-  User.associate = (models) => {
+  User.associate = models => {
     User.belongsToMany(models.Favorite, {
       through: "UserFavorite"
     });

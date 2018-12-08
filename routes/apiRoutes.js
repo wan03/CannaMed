@@ -7,15 +7,19 @@ module.exports = function(app) {
       res.json(dbFavorites);
     });
   });
-
+  
   // TODO Create a new favorite/user association
-  app.post("/api/userFavorite", function(req, res) {
-    db.User.addFavorite({
-      // TODO Figure out how to specify the strain
-      where: {
-        id: req.body.id
-      }
-    }).then(res.end());
+  app.post("/api/userFavorite/create", function(req, res) {
+    var faveId = req.body.favid;
+    var user = req.body.username;
+    return db.User.findOne({ where: { username: user } }).then(foundUser => {
+      var userToAdd = foundUser;
+      return db.Favorite.findOne({ where: { favoriteid: faveId } }).then(
+        favorite => {
+          return favorite.addUser(userToAdd).then(res.end());
+        }
+      );
+    });
   });
 
   // TODO Get favorites and users.
