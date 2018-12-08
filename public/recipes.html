@@ -1,196 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie-edge">
-  <title>Varietals</title>
-  <meta name="decription" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+
+
+
+<div class="container">
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"  crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  
-<link rel="stylesheet" type="text/css" href="css/style.css">
-
-</head>
-<body>
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light"
-       >
-
-          <a class="navbar-brand" href="#"> <!----- CSS STYLE -->
-            
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            <ul class="navbar-nav mr-auto mx-auto">
-
-              <li class="nav-item active">
-                <a class="nav-link" href="../assets/index.html">Home <span class="sr-only">(current)</span></a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="../assets/profile.html">Profile</a>
-              </li>
-              
-              <li class="nav-item">
-                      <a class="nav-link" href="../assets/recipes.html">Recipes</a>
-              </li>
-
-              <li class="nav-item">
-                      <a class="nav-link" href="../assets/dashboard.html">Dashboard</a>
-              </li>
-
-          </ul>
-          </div>
-          </nav>
-        
-
-<section class="jumbotron" id="main_jumbotron"> <!---- CSS STYLE  ---->
-<div class="container row">
-  
-<div class="col-10 text-center">
-  <h1 class="jumbotron-heading">xample</h1>
-  <p class="lead text-muted">Sout not too short so folks don't simply skip over it entirely.</p>
-</div>
-
-<div class="col-2 float-right text-center" id="jumbotron_login"> <!----- CSS STYLE ----->
-   <!-- Button triggers for modals -->
-<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#login_modal">
-    Log In
-  </button>
-<hr>
-<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signup_modal">
-    Sign Up
-  </button>
-  
-  <!-- Modal 1 -->
-  <div class="modal fade" id="login_modal" tabindex="-1" role="dialog" aria-labelledby="login_modal_label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-center" id="login_modal_label">Login or Sign up!</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form role="form">
-                <div class="form-group">
-                  <label for="inputUsernameEmail">Username or Email</label>
-                  <input type="text" class="form-control" id="inputUsernameEmail">
-                </div>
-                <div class="form-group">
-                  <label for="inputPassword">Password</label>
-                  <input type="password" class="form-control" id="inputPassword">
-                </div>
-                
-                
-                
-                <div class="row justify-content-around">
-                    <div class="checkbox float-left col-4">
-                  
-                        <label>
-                          <input type="checkbox">
-                          Remember me </label>
-                          
-                      </div>
-
-                    <a class="float-right col-4" href="#">Sign Up</a>
-                </div>
-                
-
-                <div class="row justify-content-around">
-                    <button type="submit" class="float-left btn btn btn-primary col-4">
-                        Log In
-                      </button>
-
-                      <a class="float-right col-4" href="#">Forgot password?</a>
-
-
-                </div>
-                
-
-              </form>
-        </div><!---modal body-->
-        
-      </div>
-    </div>
-  </div>
-</div>
-
- <!-- Modal 2 -->
- <div class="modal fade" id="signup_modal" tabindex="-1" role="dialog" aria-labelledby="signup_modal_label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-center" id="signup_modal_label">Sign up!</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form role="form">
-                <div class="form-group">
-                  <label for="inputUsernameEmail">Username or Email</label>
-                  <input type="text" class="form-control" id="inputUsernameEmail">
-                </div>
-                <div class="form-group">
-                  <label for="inputPassword">Password</label>
-                  <input type="password" class="form-control" id="inputPassword">
-                </div>
-                
-                
-                
-                <div class="row justify-content-around">
-                    <div class="checkbox float-left col-4">
-                  
-                        <label>
-                          <input type="checkbox">
-                          Remember me </label>
-                          
-                      </div>
-
-                    <a class="float-right col-4" href="#">Sign Up</a>
-                </div>
-                
-
-                <div class="row justify-content-around">
-                    <button type="submit" class="float-left btn btn btn-primary col-4">
-                        Log In
-                      </button>
-
-                      <a class="float-right col-4" href="#">Forgot password?</a>
-
-
-                </div>
-                
-
-              </form>
-        </div><!---modal body-->
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
-</section>   
-
-
-<div id="main-container" class="container">
-
-   <h2> Recipes</h2>
+    <h2> Recipes</h2>
     <h4>If you want to know how to make marijuana edibles, the secret is cooking with marijuana butter. First let’s talk about why make weed edibles?</h4>
     <div class="row">
-      <div class="col-lg-3 col-lg-6">
+      <div class="col-md-3 col-sm-6">
         <div class="card recipeCard"><img src="images/brownies.png" alt="Image">
           <hr>
           <div class="card-block" style="text-align:center">
@@ -210,7 +31,7 @@
             
             <p style="font-weight:bold;color:black"></p>
             <hr>
-      <div class="col-lg-3 col-lg-6">
+      <div class="col-md-3 col-sm-6">
         <div class="card recipeCard">
             <img src="images/candies.jpg" alt="Image">
           <hr>
@@ -235,19 +56,44 @@
               Weeds or star candy molds
               Lollipop sticks
               Baking dish</p>
-
-              <p style="font-weight:bold;color:black"></p>
             <hr>
         </div>
       </div>
-      
+      <div class="col-md-3 col-sm-6">
+        <div class="card recipeCard">
+            <img src="images/cookies.jpg" alt="Image">
+          <hr>
+          <div class="card-block" style="text-align:center">
+            <h4 class="card-title" style="font-weight: bold;">Cookies</h4>
+            <hr>
+            <p style="font-weight:bold;color:black">Making weed cookies is a good way to share with friends and easily monitor your dosage. Say you have used an ounce of weed in your canna butter, that is 28 grams of weed infused into the canna oil. A bowl smoked is 0.3 to 1 gram. So, if you make 28 cookies, each cookie is a large bowl smoked. If you have used a very potent strain, make 56 small cookies or advise your guests to break the cookies in half and have just a small piece every two hours. You can easily monitor your dose by having just one cookie or half of a cookie every two hours.
+
+              Making the cookies is simple. Just use the recipe on a store-bought cookie mix and use your weed butter where the recipe calls for butter or oil.
+              
+              If you are making cookies from scratch, you will need these ingredients:
+              
+              Chocolate chips, two cups
+              All-purpose flower, two cups
+              Sugar, half a cup
+              Brown sugar, half a cup
+              Baking soda, teaspoon
+              Salt, teaspoon
+              Vanilla extract, teaspoon
+              2 eggs
+              1 cup of canna butter
+              Water
+              
+              Preheat your oven to 370 degrees. Put your canna butter in a large mixing bowl and mix in your vanilla extract and sugar. Use another bowl and mix your flour, salt, and baking soda. Stir in your eggs, brown sugar, chips, and all other ingredients, mixing in just enough water to make a hard semi-solid. Now stir in your canna butter and size your cookies by how much weed you used. If you used a half ounce, make at least 14 cookies. Each cookie will be equal to one large bowl of smoked marijuana. Remember effects take at least an hour, so don’t eat too many cookies but enjoy just one cookie or a half and you will get amazing results</p>
+            <hr>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-md-6">
         <form method="post">
-          <h2 class="text-center"><strong>Submit Recipe Form</strong></h2>
+          <h2 class="text-center"><strong>Recipe Form</strong></h2>
           <div class="form-group">
             <label for="title">Title</label>
             <input type="text" class="form-control" id="name" placeholder="Recipe Title">
@@ -281,7 +127,7 @@
                         </label>
         </form>
       </div>
-      <div class="col-lg-6 recipeform">
+      <div class="col-md-6 recipeform">
         
       </div>
     </div>

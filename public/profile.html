@@ -1,188 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie-edge">
-  <title>Profile</title>
-  <meta name="decription" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"  crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  
-<link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project 2 landing page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
 </head>
+
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light"
-       >
-
-          <a class="navbar-brand" href="#"> <!----- CSS STYLE -->
-            
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            <ul class="navbar-nav mr-auto mx-auto">
-
-              <li class="nav-item active">
-                <a class="nav-link" href="../assets/index.html">Home <span class="sr-only">(current)</span></a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="../assets/profile.html">Profile</a>
-              </li>
-              
-              <li class="nav-item">
-                      <a class="nav-link" href="../assets/recipes.html">Recipes</a>
-              </li>
-
-              <li class="nav-item">
-                      <a class="nav-link" href="../assets/dashboard.html">Dashboard</a>
-              </li>
-
-          </ul>
-          </div>
-          </nav>
-        
-
-<section class="jumbotron" id="main_jumbotron"> <!---- CSS STYLE  ---->
-<div class="container row">
-  
-<div class="col-10 text-center">
-  <h1 class="jumbotron-heading">xample</h1>
-  <p class="lead text-muted">Sout not too short so folks don't simply skip over it entirely.</p>
-</div>
-
-<div class="col-2 float-right text-center" id="jumbotron_login"> <!----- CSS STYLE ----->
-   <!-- Button triggers for modals -->
-<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#login_modal">
-    Log In
-  </button>
-<hr>
-<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signup_modal">
-    Sign Up
-  </button>
-  
-  <!-- Modal 1 -->
-  <div class="modal fade" id="login_modal" tabindex="-1" role="dialog" aria-labelledby="login_modal_label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-center" id="login_modal_label">Login or Sign up!</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form role="form">
-                <div class="form-group">
-                  <label for="inputUsernameEmail">Username or Email</label>
-                  <input type="text" class="form-control" id="inputUsernameEmail">
-                </div>
-                <div class="form-group">
-                  <label for="inputPassword">Password</label>
-                  <input type="password" class="form-control" id="inputPassword">
-                </div>
-                
-                
-                
-                <div class="row justify-content-around">
-                    <div class="checkbox float-left col-4">
-                  
-                        <label>
-                          <input type="checkbox">
-                          Remember me </label>
-                          
-                      </div>
-
-                    <a class="float-right col-4" href="#">Sign Up</a>
-                </div>
-                
-
-                <div class="row justify-content-around">
-                    <button type="submit" class="float-left btn btn btn-primary col-4">
-                        Log In
-                      </button>
-
-                      <a class="float-right col-4" href="#">Forgot password?</a>
-
-
-                </div>
-                
-
-              </form>
-        </div><!---modal body-->
-        
-      </div>
-    </div>
-  </div>
-</div>
-
- <!-- Modal 2 -->
- <div class="modal fade" id="signup_modal" tabindex="-1" role="dialog" aria-labelledby="signup_modal_label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-center" id="signup_modal_label">Sign up!</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form role="form">
-                <div class="form-group">
-                  <label for="inputUsernameEmail">Username or Email</label>
-                  <input type="text" class="form-control" id="inputUsernameEmail">
-                </div>
-                <div class="form-group">
-                  <label for="inputPassword">Password</label>
-                  <input type="password" class="form-control" id="inputPassword">
-                </div>
-                
-                
-                
-                <div class="row justify-content-around">
-                    <div class="checkbox float-left col-4">
-                  
-                        <label>
-                          <input type="checkbox">
-                          Remember me </label>
-                          
-                      </div>
-
-                    <a class="float-right col-4" href="#">Sign Up</a>
-                </div>
-                
-
-                <div class="row justify-content-around">
-                    <button type="submit" class="float-left btn btn btn-primary col-4">
-                        Log In
-                      </button>
-
-                      <a class="float-right col-4" href="#">Forgot password?</a>
-
-
-                </div>
-                
-
-              </form>
-        </div><!---modal body-->
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
-</section>   
     
     <div class="container">
         <div class="form-container outline-container">
