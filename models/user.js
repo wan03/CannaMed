@@ -22,11 +22,10 @@ module.exports = function(sequelize, Sequelize) {
     }
   });
   // eslint-disable-next-line prettier/prettier
-  Users.associate = (models) => {
-    Users.belongsToMany(models.Favorite, {
+  User.associate = (models) => {
+    User.belongsToMany(models.Favorite, {
       through: "UserFavorite"
     });
   };
-
   return User;
 };

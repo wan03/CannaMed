@@ -8,7 +8,7 @@ module.exports = function(app) {
     });
   });
 
-  // Create a new favorite association
+  // TODO Create a new favorite/user association
   app.post("/api/userFavorite", function(req, res) {
     Promise.all([
       User.create(req.body.user),
@@ -23,12 +23,44 @@ module.exports = function(app) {
       });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.json(dbExample);
-    });
+  // TODO Get favorites and users.
+  app.get("/api/userFavorite/:id", function(req, res) {
+    User.findOne({
+      where: { id: req.params.id },
+      include: [
+        {
+          model: Favorite
+        }
+      ]
+    }).then(users => {
+      const resObj = users.map(user => {
+        return Object.assign(
+          {},
+          {
+            userId: user.id,
+            userName: user.username,
+            favorite: user.favorite.map(post => {
+              return Object.assign(
+                {},
+                {
+                  name: favorite.name,
+                  image: favorite.image,
+                  type: favorite.type,
+                  location: favorite.location,
+                  feelings: favorite.feelings,
+                  ailment: favorite.ailment,
+                  url: favorite.url,
+                  flavor: favorite.flavor,
+                  thc: favorite.thc,
+                  cbd: favorite.cbd
+                };
+              );
+            })
+          }
+        );;
+      });
+    });;
   });
+
+  // TODO Remove a favorite/user association
 };

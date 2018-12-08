@@ -12,10 +12,15 @@ module.exports = function(sequelize, DataTypes) {
     feelings: DataTypes.STRING,
     ailment: DataTypes.STRING,
     url: DataTypes.STRING,
-    image: DataTypes.STRING,
     flavor: DataTypes.STRING,
     thc: DataTypes.INTEGER,
     cbd: DataTypes.INTEGER
   });
+  // eslint-disable-next-line prettier/prettier
+  Favorite.associate = (models) => {
+    Favorite.belongsToMany(models.User, {
+      through: "UserFavorite"
+    });
+  };
   return Favorite;
 };
