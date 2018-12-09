@@ -15,6 +15,7 @@ module.exports = function(passport, user) {
     User.findById(id).then(function(user) {
       if (user) {
         done(null, user.get());
+        console.log("deserialize good");
       } else {
         done(user.errors, null);
       }
@@ -76,13 +77,15 @@ module.exports = function(passport, user) {
           return bCrypt.compareSync(password, userpass);
         };
 
-        User.findOne({ where: { username: username } })
+        db.User.findOne({ where: { username: username } })
           .then(function(user) {
             if (!user) {
+              console.log("Username does not exist");
               return done(null, false, { message: "Username does not exist" });
             }
 
             if (!isValidPassword(user.password, password)) {
+              console.log("Incorrect password.");
               return done(null, false, { message: "Incorrect password." });
             }
 
@@ -92,7 +95,7 @@ module.exports = function(passport, user) {
           })
           .catch(function(err) {
             console.log("Error:", err);
-
+            console.log("Something went wrong with your Signin");
             return done(null, false, {
               message: "Something went wrong with your Signin"
             });
