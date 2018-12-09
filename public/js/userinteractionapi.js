@@ -1,4 +1,4 @@
-module.exports = interactionAPI = {
+ var API = {
   createFavorite: favoriteUser => {
     return $.ajax({
       headers: {

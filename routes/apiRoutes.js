@@ -1,55 +1,18 @@
-var db = require("../models");
+const apiController = require("../controllers/apicontroller");
 
 module.exports = app => {
   // Get all strains
-  app.get("/api/strains", function(req, res) {
-    db.Favorite.findAll({}).then(function(dbFavorites) {
-      res.json(dbFavorites);
-    });
-  });
+  app.get("/api/strains", apiController.getStrains);
+
+  // Get News
+  app.get("/api/news", apiController.getNews)
 
   // Create User/Favorite association
-  app.post("/api/userFavorite/create", (req, res) => {
-    var faveId = req.body.favid;
-    var user = req.body.username;
-    return db.User.findOne({ where: { username: user } }).then(foundUser => {
-      var userToAdd = foundUser;
-      return db.Favorite.findOne({ where: { favoriteid: faveId } }).then(
-        favorite => {
-          return favorite.addUser(userToAdd).then(res.end());
-        }
-      );
-    });
-  });
+  app.post("/api/userFavorite/create", apiController.createFavorite);
 
   // Get favorites and users.
-  app.get("/api/userFavorite/:id", (req, res) => {
-    db.User.findOne({
-      where: { id: req.params.id },
-      attributes: {
-        exclude: ["password", "createdAt", "updatedAt"]
-      },
-      include: [
-        {
-          model: db.Favorite
-        }
-      ]
-    }).then(users => {
-      res.json(users.dataValues);
-    });
-  });
+  app.get("/api/userFavorite/:id", apiController.userFavorite);
 
   // Remove a favorite/user association
-  app.post("/api/userFavorite/remove", (req, res) => {
-    var faveId = req.body.favid;
-    var user = req.body.username;
-    return db.User.findOne({ where: { username: user } }).then(foundUser => {
-      var userToAdd = foundUser;
-      return db.Favorite.findOne({ where: { favoriteid: faveId } }).then(
-        favorite => {
-          return favorite.removeUser(userToAdd).then(res.end());
-        }
-      );
-    });
-  });
+  app.post("/api/userFavorite/remove", apiController.removeFavorite);
 };

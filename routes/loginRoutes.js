@@ -14,15 +14,21 @@ module.exports = function(app, passport) {
   app.get("/logout", authController.logout);
   app.post(
     "/signin",
-    passport.authenticate("local-signin", {
-      successRedirect: "/dashboard",
-      failureRedirect: "/signin"
-    })
+    passport.authenticate(
+      "local-signin",
+      {
+        successRedirect: "/dashboard",
+        failureRedirect: "/signin"
+      },
+      authController.signIn
+    )
   );
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
+      console.log("here!------------");
       return next();
     }
+    console.log("NOT here!------------");
     res.redirect("/signin");
   }
 };

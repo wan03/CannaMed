@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const exphbs = require("express-handlebars");
 const passport = require("passport");
@@ -8,7 +9,6 @@ const bodyParser = require("body-parser");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-require("dotenv").config();
 require("./config/passport")(passport);
 
 // Middleware
@@ -28,13 +28,13 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash());
 // Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
+// app.engine(
+//   "handlebars",
+//   exphbs({
+//     defaultLayout: "main"
+//   })
+// );
+// app.set("view engine", "handlebars");
 
 // Routes
 require("./config/passport.js")(passport, db.user);
