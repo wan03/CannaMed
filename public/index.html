@@ -79,7 +79,7 @@
     Log In
   </button>
 <hr>
-<button type="button" class="hvr-grow" data-toggle="modal" data-target="#signup_modal">
+<button type="button" class="hvr-grow" data-toggle="modal" data-target="#login_modal">
     Sign Up
   </button>
 
@@ -141,64 +141,7 @@
   </div>
 </div>
 
- <!-- Modal 2 -->
- <div class="modal fade" id="signup_modal" tabindex="-1" role="dialog" aria-labelledby="signup_modal_label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-center" id="signup_modal_label">Sign up!</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form role="form">
-                <div class="form-group">
-                  <label for="inputUsernameEmail">Username or Email</label>
-                  <input type="text" class="form-control" id="inputUsernameEmail">
-                </div>
-                <div class="form-group">
-                  <label for="inputPassword">Password</label>
-                  <input type="password" class="form-control" id="inputPassword">
-                </div>
-                
-                
-                
-                <div class="row justify-content-around">
-                    <div class="checkbox float-left col-4">
-                  
-                        <label>
-                          <input type="checkbox">
-                          Remember me </label>
-                          
-                      </div>
-
-                    <a class="float-right col-4" href="#">Sign Up</a>
-                </div>
-                
-
-                <div class="row justify-content-around">
-                    <button type="submit" class="float-left btn btn btn-primary col-4">
-                        Log In
-                      </button>
-
-                      <a class="float-right col-4" href="#">Forgot password?</a>
-
-
-                </div>
-                
-
-              </form>
-        </div><!---modal body-->
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-</div>
+ 
 
 </section>              
 
@@ -212,113 +155,13 @@
 
 
 
-<div class="col-lg-8" id="featured">  <!---- CSS STYLE --->
-  <!-- <div class="card">
-      <div class="card-header text-center">
-          <span class="pulse">Featured Strains!</span>
-      </div>
-      
-   <div class="card-body">     
-      <div class="row">
-
-            <div class="col-sm-3">
-            <div class="card text-center">
-              <div class="card-body">
-                  <img src="https://via.placeholder.com/150" alt="..." class="img-thumbnail" id="featured_img1">
-
-                <h5 class="card-title" id="featured_name1">Name</h5>
-                <p class="card-text" id="featured_bio1">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="hvr-grow" id="featured_btn1">Link</a>
-              </div>
-            </div>
-          </div>
-
-            <div class="col-sm-3">
-            <div class="card text-center">
-              <div class="card-body">
-                  <img src="https://via.placeholder.com/150" alt="..." class="img-thumbnail" id="featured_img2">
-
-                <h5 class="card-title" id="featured_name2">Name</h5>
-                <p class="card-text" id="featured_bio2">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="hvr-grow" id="featured_btn2" data-id="favoriteID">Link</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="card text-center">
-              <div class="card-body">
-                  <img src="https://via.placeholder.com/150" alt="..." class="img-thumbnail" id="featured_img3">
-
-                <h5 class="card-title" id="featured_name3">Name</h5>
-                <p class="card-text" id="featured_bio3">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="hvr-grow" id="featured_btn3">Link</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="card text-center">
-              <div class="card-body">
-                  <img src="https://via.placeholder.com/150" alt="..." class="img-thumbnail" id="featured_img4">
-
-                <h5 class="card-title" id="featured_name4">Name</h5>
-                <p class="card-text" id="featured_bio4">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="hvr-grow" id="featured_btn4">Link</a>
-              </div>
-            </div>
-          </div>
-
-      </div>-row /div -->
-    <!-- </div>
-        
-
-</div>               -->
+<div class="col-lg-8" id="featuredtop">  <!---- CSS STYLE --->
+            <div id="featured"></div>
 </div>  <!--- main card /div --> 
-  
+<div class="col-lg-8" id="favoritestop">  <!---- CSS STYLE --->
+  <div id="favorites">Please sign in to see your favorites!</div>
+</div> 
 <div class="col-sm-2 float-right" id="article">
-<!-- <div class="card" id="article_card" > ----CSS STYLE--- -->
-<!-- 
-<div class="card-header">
-<h4>NEWS</h4>
-</div>
-<div class="card-body">
-
-<ul class="list-unstyled">
-<li>
-  <!-- TODO change to class instead of id -->
-  <!-- <p id="article_title1"><b>Pope anti pot</b></p>
-   <p class="article_text" id="article_text1"> --CSS STYLE --> 
-<!-- 
-    The Catholic Church has donated $850,000 in a last minute effort to defeat marijuana legalization in Massachusetts.</p>
-    <a href="https://www.bostonglobe.com/metro/2016/10/28/archdiocese-spend-against-marijuana-legalization/qtCwVY4ViWjRFwOvcyveeK/story.html" id="article_link1">Read More...</a>
-</li>
-
-<hr>
-
-<li>
-<p id="article_title1"><b>Banning marijuana usage tests</b></p>
-<p class="article_text" id="article_text1"> 
-
-    Wisconsin legislator to propose banning marijuana tests for most jobs</p>
-<a href="https://isthmus.com/news/news/wisconsin-legislator-to-propose-banning-marijuana-tests-for-/" id="article_link1">Read More...</a>
-</li>
-
-<hr>
-
-<li>
-<p id="article_title1"><b>Congressman: "Legalizing marijuana nationwide would</b></p>
-<p class="article_text" id="article_text1"> 
-
-    Legalizing marijuana nationwide would create over a million jobs </p>
-<a href="https://twitter.com/RoKhanna/status/975924135586037760" id="article_link1">Read More...</a>
-</li>
-
-</ul>
-</div>
-
-</div> -->
-<!-- </div> -->
 
 </div> <!---- ROW /div -->
 
@@ -378,7 +221,7 @@
   <div id="lastray" class="element"></div>
   <script src="js/master.js" charset="utf-8"></script>
   <script src="js/particles.js" charset="utf-8"></script>
-  <script src="js/userinteraction.js"></script>
+  <script src="js/authuserinteraction.js"></script>
   <script src="js/login.js"></script>
 
 <div class="container">
