@@ -1,15 +1,20 @@
+const path = require("path");
 var exports = (module.exports = {});
 
 exports.signup = function(req, res) {
-  res.render("signup");
+  res.sendFile(path.join(__dirname + "/../public" + "/index.html"));
 };
 
 exports.signin = function(req, res) {
-  res.render("signin");
+  res.sendFile(path.join(__dirname + "/../public" + "/index.html"));
+};
+
+exports.signIn = function(req, res) {
+  console.log(res);
 };
 
 exports.dashboard = function(req, res) {
-  res.render("dashboard");
+  res.sendFile(path.join(__dirname + "/../public" + "/dashboard.html"));
 };
 
 exports.logout = function(req, res) {

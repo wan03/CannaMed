@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
     type: DataTypes.STRING,
     location: DataTypes.STRING,
     feelings: DataTypes.STRING,
-    ailment: DataTypes.STRING,
+    ailments: DataTypes.STRING,
     url: DataTypes.STRING,
     flavor: DataTypes.STRING,
     thc: DataTypes.INTEGER,
