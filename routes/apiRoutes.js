@@ -15,4 +15,6 @@ module.exports = app => {
 
   // Remove a favorite/user association
   app.post("/api/userFavorite/remove", apiController.removeFavorite);
+
+  app.get('/api/user_data', apiController.getUser);
 };

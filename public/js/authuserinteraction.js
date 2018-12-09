@@ -38,8 +38,15 @@ var API = {
       url: "api/news",
       type: "GET"
     });
-  }
+  },
+  getUser: () =>$.getJSON("api/user_data", function(data) {
+    // Make sure the data contains the username as expected before using it
+    if (data.hasOwnProperty('username')) {
+        console.log('Usrename: ' + data.username);
+    }
+});
 };
+
 
 var userInteraction = {
   // Refresh strains in home
@@ -93,6 +100,12 @@ var userInteraction = {
           .attr("href", data[i].url)
           .text("Learn More")
           .appendTo(cardBody2);
+        $("<btn>")
+          .addClass("btn strainbtn btn-primary")
+          .attr({
+            "data-id": data[i].id,
+            "data-user": data[i].username
+          });
 
         // console.log(data[1].ailment);
         $("#featured").append(featuredCard);
@@ -171,7 +184,7 @@ var userInteraction = {
             // eslint-disable-next-line prettier/prettier
             "alt": data[i].name,
             // eslint-disable-next-line prettier/prettier
-            "src": data[i].image,
+            'src': data[i].image,
             "data-id": data[i].id
           })
           .appendTo(anchor);
@@ -189,6 +202,12 @@ var userInteraction = {
           .attr("href", data[i].url)
           .text("Learn More")
           .appendTo(cardBody2);
+        $("<btn>")
+          .addClass("btn favoritebtn btn-primary")
+          .attr({
+            "data-id": data[i].id,
+            "data-user": data[i].username
+          });
 
         $("#favorites").append(featuredCard);
       }
@@ -230,5 +249,6 @@ getFavorites = user => {
   }
 };
 
+getFavorites();
 getFeaturedStrains();
 getTopNews();

@@ -59,5 +59,16 @@ module.exports = apiController = {
         }
       );
     });
+  },
+
+  getUser: (req, res) => {
+    if (req.user === undefined) {
+      // The user is not logged in
+      res.json({});
+    } else {
+      res.json({
+        username: req.user
+      });
+    }
   }
 };

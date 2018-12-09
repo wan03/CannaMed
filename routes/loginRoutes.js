@@ -21,6 +21,7 @@ module.exports = function(app, passport) {
   ) {
     // If this function gets called, authentication was successful.
     // `req.user` contains the authenticated user.
+    console.log(req.user, "req.user ---------------");
     console.log("right before redirect");
     res.redirect("/dashboard");
   });
