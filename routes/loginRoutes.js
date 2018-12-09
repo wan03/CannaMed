@@ -10,19 +10,20 @@ module.exports = function(app, passport) {
       failureRedirect: "/signup"
     })
   );
+
   app.get("/dashboard", isLoggedIn, authController.dashboard);
+
   app.get("/logout", authController.logout);
-  app.post(
-    "/signin",
-    passport.authenticate(
-      "local-signin",
-      {
-        successRedirect: "/dashboard",
-        failureRedirect: "/signin"
-      },
-      authController.signIn
-    )
-  );
+
+  app.post("/signin", passport.authenticate("local-signin"), function(
+    req,
+    res
+  ) {
+    // If this function gets called, authentication was successful.
+    // `req.user` contains the authenticated user.
+    console.log("right before redirect");
+    res.redirect("/dashboard");
+  });
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
       console.log("here!------------");

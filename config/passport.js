@@ -12,12 +12,16 @@ module.exports = function(passport, user) {
 
   // used to deserialize the user
   passport.deserializeUser(function(id, done) {
+    console.log("deserialize outer");
+    console.log(id + "deserialize outer id");
+    
     User.findById(id).then(function(user) {
       if (user) {
         done(null, user.get());
         console.log("deserialize good");
       } else {
         done(user.errors, null);
+        console.log(user.errors);
       }
     });
   });
@@ -72,7 +76,7 @@ module.exports = function(passport, user) {
 
       function(req, username, password, done) {
         var User = user;
-
+console.log("login in outer");
         var isValidPassword = function(userpass, password) {
           return bCrypt.compareSync(password, userpass);
         };

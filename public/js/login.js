@@ -19,25 +19,9 @@ var API = {
       data: JSON.stringify(userInfo)
     });
   },
-  removeFavorite: favoriteUser => {
+  logout: () => {
     return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "/api/userFavorite/remove",
-      data: JSON.stringify(favoriteUser)
-    });
-  },
-  getStrains: () => {
-    return $.ajax({
-      url: "api/strains",
-      type: "GET"
-    });
-  },
-  getNews: () => {
-    return $.ajax({
-      url: "api/news",
+      url: "/logout",
       type: "GET"
     });
   }
@@ -53,7 +37,9 @@ $("#log_in").on("click", event => {
     .trim();
   var userInfo = { username: username, password: password };
 
+  $("#login_modal").modal("hide");
   API.login(userInfo);
+  // .then((window.top.location = "/dashboard"));
 });
 
 $("#sign_up").on("click", event => {
@@ -67,4 +53,10 @@ $("#sign_up").on("click", event => {
   var userInfo = { username: username, password: password };
 
   API.signup(userInfo);
+});
+
+$("#log_out").on("click", event => {
+  event.preventDefault();
+
+  API.logout();
 });

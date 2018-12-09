@@ -11,9 +11,9 @@ var API = {
       data: JSON.stringify(favoriteUser)
     });
   },
-  getFavorites: id => {
+  getFavorites: user => {
     return $.ajax({
-      url: "/api/userFavorite/" + id,
+      url: "/api/userFavorite/" + user,
       type: "GET"
     });
   },
@@ -134,32 +134,54 @@ var userInteraction = {
     // console.log(data[1].ailment);
   },
 
-  refreshFavorites: () => {
-    API.getFavorites().then(function(data) {
-      // TODO Figure out how to structure this
-      var $examples = data.map(function(example) {
-        var $a = $("<a>")
-          .text(example.text)
-          .attr("href", "/example/" + example.id);
-
-        var $li = $("<li>")
+  refreshFavorites: user => {
+    API.getFavorites(user).then(function(data) {
+      let featuredCard = $("<div>").addClass("card");
+      $("<div>")
+        .addClass("card-header text-center")
+        .text("Featured Strains!")
+        .appendTo(featuredCard);
+      let cardBody = $("<div>")
+        .addClass("card-body")
+        .appendTo(featuredCard);
+      let row = $("<div>")
+        .addClass("row")
+        .appendTo(cardBody);
+      for (let i = 0; i < data.length; i++) {
+        let col = $("<div>")
+          .addClass("col-sm-4")
+          .appendTo(row);
+        let innerCard = $("<div>")
+          .addClass("card text-center")
+          .appendTo(col);
+        let cardBody2 = $("<div>")
+          .addClass("card-body")
+          .appendTo(innerCard);
+        $("<img>")
+          .addClass("img-thumbnail")
           .attr({
-            class: "list-group-item",
-            "data-id": example.id
+            alt: data[i].name,
+            src: data[i].image,
+            "data-id": data[i].id
           })
-          .append($a);
+          .appendTo(cardBody2);
+        $("<h5>")
+          .addClass("card-title")
+          .attr("data-id", data[i].name)
+          .text(data[i].name)
+          .appendTo(cardBody2);
+        $("<p>")
+          .addClass("card-text")
+          .text(data[i].ailment)
+          .appendTo(cardBody2);
+        $("<a>")
+          .addClass("hvr-grow")
+          .attr("href", data[i].url)
+          .text("Learn More")
+          .appendTo(cardBody2);
 
-        var $button = $("<button>")
-          .addClass("btn btn-danger float-right delete")
-          .text("ｘ");
-
-        $li.append($button);
-
-        return $li;
-      });
-
-      $exampleList.empty();
-      $exampleList.append($examples);
+        $("#favorites").append(featuredCard);
+      }
     });
   },
 
@@ -189,6 +211,13 @@ getFeaturedStrains = () => {
 
 getTopNews = () => {
   userInteraction.refreshNews();
+};
+
+// TODO figure out how to call this function efficiently
+getFavorites = user => {
+  if (user) {
+    userInteraction.refreshFavorites();
+  }
 };
 
 getFeaturedStrains();

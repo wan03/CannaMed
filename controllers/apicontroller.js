@@ -33,7 +33,7 @@ module.exports = apiController = {
   // Get favorites and users.
   userFavorite: (req, res) => {
     db.User.findOne({
-      where: { id: req.params.id },
+      where: { username: req.params.username },
       attributes: {
         exclude: ["password", "createdAt", "updatedAt"]
       },
