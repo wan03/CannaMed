@@ -11,7 +11,7 @@ body {
   }
 
   h1 {
-    font-size: 8em;
+    font-size: 8vw;
     color: #FFFFFF;
     background: #232323;
     text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
@@ -19,8 +19,9 @@ body {
   }
   
   h2 {
-    font-size: 4em;
+    font-size: 3vw;
   }
+
   h4 {
 
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
@@ -58,6 +59,10 @@ body {
   width:100%
 }
 
+.space {
+  height: 90px;
+  width: 100%;
+}
 
 /**-----**/
 
@@ -88,25 +93,50 @@ canvas {
  background: transparent;
  padding-bottom: 4%;
  padding-top: 4%;
+ cursor: pointer;
   }
 
-#menu_card{
- border-color: red;
- margin-left: 10px;
- background: #d7ffb7;
-}
+#all_card{
+ border-color:blue;
+ background: transparent;
+ font-size:2em;
+ border-style: inset;
+ }
 
 #featured{
   background-color: transparent;
  padding: 0px;
+ font-size: 2em;
+ font-weight: bold;
+ border-style: inset;
+ box-shadow: 0 0 2px rgba(0, 0, 0, 0);
+ animation-duration: 11s;
+ animation-name: slidein; 
+ transition-timing-function: ease;
 }
 
-#article_card{
+@keyframes slidein {
+  from{
+      margin-left: 100%;
+      width: 300%;
+  }
+
+  to {
+      margin-left: 0%;
+      width: 100%;
+  }
+}
+
+#article{
  border-color: blue;
  margin-right: 10px;
- background: rgba(167, 240, 99, 0.753);
+ box-shadow: 0 0 2px rgba(0, 0, 0, 0);
  border-style: outset;
  border-radius: 5%;
+ font-size: 1em;
+ min-width: 22vw;
+ text-overflow: ellipsis;
+ overflow: hidden
 }
 
 .article_text{
@@ -114,7 +144,7 @@ canvas {
  display: inline-block;
  overflow: hidden;
  max-height: 75px;
- max-width: 150px;
+ max-width: 250px;
  margin-bottom: 0px;
 }
 
@@ -369,9 +399,8 @@ canvas {
     width: 20em;
     height: 20em;
     border-radius: 25%;
-    font-size:3em;
+    font-size:2vw;
     color: rgb(11, 12, 12); 
-    cursor: pointer;
     box-shadow: 0 0 0 #49ff18;
     animation: pulse 2s infinite;
   }
@@ -384,12 +413,11 @@ canvas {
     overflow-y: hidden;
     white-space: nowrap;
   }
-
-  #all_card {
-    flex-direction: row;
-  }
   
-
+    .card {
+      display: inline-block;
+    }
+  
 
   @-webkit-keyframes pulse {
     0% {
