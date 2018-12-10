@@ -1,6 +1,7 @@
 require("dotenv").config({ path: "../.env" });
 const NewsAPI = require("newsapi");
-const newsapi = new NewsAPI(process.env.NEWSAPIKEY);
+let apiKey = process.env.NEWSAPIKEY;
+const newsapi = new NewsAPI(apiKey);
 var today = new Date();
 var article = [];
 
