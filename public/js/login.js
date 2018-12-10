@@ -39,7 +39,7 @@ $("#log_in").on("click", event => {
 
   $("#login_modal").modal("hide");
   APIlogin.login(userInfo);
-  // .then((window.top.location = "/dashboard"));
+  window.location.href = "/";
 });
 
 $("#sign_up").on("click", event => {
@@ -53,6 +53,7 @@ $("#sign_up").on("click", event => {
   var userInfo = { username: username, password: password };
 
   APIlogin.signup(userInfo);
+  window.location.href = "/";
 });
 
 $("#log_out").on("click", event => {

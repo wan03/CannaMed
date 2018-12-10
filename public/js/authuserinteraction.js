@@ -11,7 +11,6 @@ $(document).ready(() => {
       });
     },
     getFavorites: user => {
-      console.log(user, "getfav---------------------");
       return $.ajax({
         url: "/api/userFavorite/" + user,
         type: "GET"
@@ -41,9 +40,7 @@ $(document).ready(() => {
     },
     getUser: () => {
       $.getJSON("api/user_data", function(data) {
-        // Make sure the data contains the username as expected before using it
         if (data.hasOwnProperty("username")) {
-          console.log("Username: " + data.username.username);
           userInteraction.refreshFavorites(data.username.username);
           userInteraction.AuthRefreshStrains(data.username.username);
           userInteraction.refreshNews();
@@ -75,7 +72,6 @@ $(document).ready(() => {
           .addClass("row")
           .appendTo(cardBody);
         for (let i = 0; i < 3; i++) {
-          console.log(data[i].favoriteId, "id-------------------------");
           let col = $("<div>")
             .addClass("col-sm-4")
             .appendTo(row);
@@ -112,8 +108,6 @@ $(document).ready(() => {
             .attr("href", data[i].url)
             .text("Learn More")
             .appendTo(cardBody2);
-
-          // console.log(data[1].ailment);
           $("#featured").replaceWith(featuredCard);
         }
       });
@@ -124,22 +118,12 @@ $(document).ready(() => {
         let allCard = $("<div>")
           .addClass("card")
           .attr("id", "all_card");
-        $("<div>")
-          .addClass("card-header text-center")
-          .text("All Strains!")
-          .appendTo(allCard);
-        let cardBody = $("<div>")
-          .addClass("card-body")
-          .appendTo(allCard);
-        let row = $("<div>")
-          .addClass("row")
-          .appendTo(cardBody);
         for (let i = 0; i < data.length; i++) {
           let col = $("<div>")
             .addClass("col-sm-4")
-            .appendTo(row);
+            .appendTo(allCard);
           let innerCard = $("<div>")
-            .addClass("card text-center")
+            .addClass("card text-center cardin")
             .appendTo(col);
           let cardBody2 = $("<div>")
             .addClass("card-body")
@@ -171,8 +155,6 @@ $(document).ready(() => {
             .attr("href", data[i].url)
             .text("Learn More")
             .appendTo(cardBody2);
-
-          // console.log(data[1].ailment);
           $("#all_card").replaceWith(allCard);
         }
       });
@@ -238,8 +220,6 @@ $(document).ready(() => {
             })
             .text("Make Favorite!")
             .appendTo(cardBody2);
-
-          // console.log(data[1].ailment);
           $("#featured").append(featuredCard);
         }
       });
@@ -250,20 +230,10 @@ $(document).ready(() => {
         let allCard = $("<div>")
           .addClass("card")
           .attr("id", "all_card");
-        $("<div>")
-          .addClass("card-header text-center")
-          .text("All Strains!")
-          .appendTo(allCard);
-        let cardBody = $("<div>")
-          .addClass("card-body")
-          .appendTo(allCard);
-        let row = $("<div>")
-          .addClass("row")
-          .appendTo(cardBody);
         for (let i = 0; i < data.length; i++) {
           let col = $("<div>")
             .addClass("col-sm-4")
-            .appendTo(row);
+            .appendTo(allCard);
           let innerCard = $("<div>")
             .addClass("card text-center")
             .appendTo(col);
@@ -305,8 +275,6 @@ $(document).ready(() => {
             })
             .text("Make Favorite!")
             .appendTo(cardBody2);
-
-          // console.log(data[1].ailment);
           $("#all_card").replaceWith(allCard);
         }
       });
@@ -350,75 +318,73 @@ $(document).ready(() => {
         }
         $("#article").replaceWith(articleCard);
       });
-      // console.log(data[1].ailment);
     },
 
     refreshFavorites: username => {
       if (username) {
-        console.log(username, "refreshfav--------------------");
         API.getFavorites(username).then(data => {
           let dataF = data.Favorites;
-          console.log(dataF[0].name, "dataFname-------------------------");
-          let favoriteCard = $("<div>")
-            .addClass("card")
-            .attr("id", "favorites");
-          $("<div>")
-            .addClass("card-header text-center")
-            .text("Favorite Strains!")
-            .appendTo(favoriteCard);
-          let cardBody = $("<div>")
-            .addClass("card-body")
-            .appendTo(favoriteCard);
-          let row = $("<div>")
-            .addClass("row")
-            .appendTo(cardBody);
-          for (let i = 0; i < dataF.length; i++) {
-            let col = $("<div>")
-              .addClass("col-sm-4")
-              .appendTo(row);
-            let innerCard = $("<div>")
-              .addClass("card text-center")
-              .appendTo(col);
-            let cardBody2 = $("<div>")
+          if (dataF[0]) {
+            let favoriteCard = $("<div>")
+              .addClass("card")
+              .attr("id", "favorites");
+            $("<div>")
+              .addClass("card-header text-center")
+              .text("Favorite Strains!")
+              .appendTo(favoriteCard);
+            let cardBody = $("<div>")
               .addClass("card-body")
-              .appendTo(innerCard);
-            let anchor = $("<a>")
-              .attr("href", dataF[i].url)
-              .appendTo(cardBody2);
-            $("<img>")
-              .addClass("img-thumbnail")
-              .attr({
-                // eslint-disable-next-line prettier/prettier
-                "alt": dataF[i].name,
-                // eslint-disable-next-line prettier/prettier
-                "src": dataF[i].image,
-                "data-id": dataF[i].favoriteId
-              })
-              .appendTo(anchor);
-            $("<h5>")
-              .addClass("card-title")
-              .attr("data-id", dataF[i].name)
-              .text(dataF[i].name)
-              .appendTo(cardBody2);
-            $("<p>")
-              .addClass("card-text")
-              .text(dataF[i].ailment)
-              .appendTo(cardBody2);
-            $("<a>")
-              .addClass("hvr-grow")
-              .attr("href", dataF[i].url)
-              .text("Learn More")
-              .appendTo(cardBody2);
-            $("<btn>")
-              .addClass("btn removebtn btn-primary")
-              .attr({
-                "data-favid": dataF[i].favoriteId,
-                "data-user": username
-              })
-              .text("Remove Favorite")
-              .appendTo(cardBody2);
-
-            $("#favorites").replaceWith(favoriteCard);
+              .appendTo(favoriteCard);
+            let row = $("<div>")
+              .addClass("row")
+              .appendTo(cardBody);
+            for (let i = 0; i < dataF.length; i++) {
+              let col = $("<div>")
+                .addClass("col-sm-4")
+                .appendTo(row);
+              let innerCard = $("<div>")
+                .addClass("card text-center")
+                .appendTo(col);
+              let cardBody2 = $("<div>")
+                .addClass("card-body")
+                .appendTo(innerCard);
+              let anchor = $("<a>")
+                .attr("href", dataF[i].url)
+                .appendTo(cardBody2);
+              $("<img>")
+                .addClass("img-thumbnail")
+                .attr({
+                  // eslint-disable-next-line prettier/prettier
+                  "alt": dataF[i].name,
+                  // eslint-disable-next-line prettier/prettier
+                  "src": dataF[i].image,
+                  "data-id": dataF[i].favoriteId
+                })
+                .appendTo(anchor);
+              $("<h5>")
+                .addClass("card-title")
+                .attr("data-id", dataF[i].name)
+                .text(dataF[i].name)
+                .appendTo(cardBody2);
+              $("<p>")
+                .addClass("card-text")
+                .text(dataF[i].ailment)
+                .appendTo(cardBody2);
+              $("<a>")
+                .addClass("hvr-grow")
+                .attr("href", dataF[i].url)
+                .text("Learn More")
+                .appendTo(cardBody2);
+              $("<btn>")
+                .addClass("btn removebtn btn-primary")
+                .attr({
+                  "data-favid": dataF[i].favoriteId,
+                  "data-user": username
+                })
+                .text("Remove Favorite")
+                .appendTo(cardBody2);
+              $("#favorites").replaceWith(favoriteCard);
+            }
           }
         });
       }
@@ -430,20 +396,15 @@ $(document).ready(() => {
         username: username
       };
       API.createFavorite(favoriteUser).then(user => {
-        console.log(user, "create-------------");
         userInteraction.refreshFavorites(user);
       });
     },
     handleRemoveFavorite: (favId, username) => {
-      console.log(favId, "id--------------before");
-      console.log(username, "id--------------before");
       let favoriteUser = {
         favId: favId,
         username: username
       };
       API.removeFavorite(favoriteUser).then(user => {
-        console.log("after api call");
-        console.log(user, "remove-----------------");
         userInteraction.refreshFavorites(user);
       });
     }
@@ -452,8 +413,6 @@ $(document).ready(() => {
   $("div#favoritestop").on("click", ".removebtn", function() {
     let user = $(this).attr("data-user");
     let favId = $(this).attr("data-favid");
-
-    console.log(favId, user, "remove----------------------");
     userInteraction.handleRemoveFavorite(favId, user);
   });
 

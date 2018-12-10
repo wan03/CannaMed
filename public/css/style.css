@@ -384,11 +384,12 @@ canvas {
     overflow-y: hidden;
     white-space: nowrap;
   }
+
+  #all_card {
+    flex-direction: row;
+  }
   
-    .card {
-      display: inline-block;
-    }
-  
+
 
   @-webkit-keyframes pulse {
     0% {
