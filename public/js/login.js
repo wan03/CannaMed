@@ -1,4 +1,4 @@
-var API = {
+const APIlogin = {
   login: userInfo => {
     return $.ajax({
       headers: {
@@ -38,7 +38,7 @@ $("#log_in").on("click", event => {
   var userInfo = { username: username, password: password };
 
   $("#login_modal").modal("hide");
-  API.login(userInfo);
+  APIlogin.login(userInfo);
   // .then((window.top.location = "/dashboard"));
 });
 
@@ -52,11 +52,11 @@ $("#sign_up").on("click", event => {
     .trim();
   var userInfo = { username: username, password: password };
 
-  API.signup(userInfo);
+  APIlogin.signup(userInfo);
 });
 
 $("#log_out").on("click", event => {
   event.preventDefault();
 
-  API.logout();
+  APIlogin.logout();
 });
