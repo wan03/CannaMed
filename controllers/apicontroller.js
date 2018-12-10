@@ -50,9 +50,6 @@ module.exports = apiController = {
   // Remove a favorite/user association
   removeFavorite: (req, res) => {
     let faveId = req.body.favId;
-    console.log(req.body.favId);
-    console.log(req.body);
-    console.log(req.body.username);
     let user = req.body.username;
     return db.User.findOne({ where: { username: user } }).then(foundUser => {
       let userToRemove = foundUser;
