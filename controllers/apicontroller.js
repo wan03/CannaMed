@@ -18,16 +18,13 @@ module.exports = apiController = {
 
   // Create User/Favorite association
   createFavorite: (req, res) => {
-    var faveId = req.body.favId;
-    console.log(req.body.favId);
-    console.log(req.body);
-    console.log(req.body.username);
-    var user = req.body.username;
+    let faveId = req.body.favId;
+    let user = req.body.username;
     return db.User.findOne({ where: { username: user } }).then(foundUser => {
-      var userToAdd = foundUser;
+      let userToAdd = foundUser;
       return db.Favorite.findOne({ where: { favoriteid: faveId } }).then(
         favorite => {
-          return favorite.addUser(userToAdd).then(res.end());
+          return favorite.addUser(userToAdd).then(res.json(user));
         }
       );
     });
@@ -52,13 +49,16 @@ module.exports = apiController = {
 
   // Remove a favorite/user association
   removeFavorite: (req, res) => {
-    var faveId = req.body.favId;
-    var user = req.body.username;
+    let faveId = req.body.favId;
+    console.log(req.body.favId);
+    console.log(req.body);
+    console.log(req.body.username);
+    let user = req.body.username;
     return db.User.findOne({ where: { username: user } }).then(foundUser => {
-      var userToRemove = foundUser;
+      let userToRemove = foundUser;
       return db.Favorite.findOne({ where: { favoriteid: faveId } }).then(
         favorite => {
-          return favorite.removeUser(userToRemove).then(res.end());
+          return favorite.removeUser(userToRemove).then(res.json(user));
         }
       );
     });
