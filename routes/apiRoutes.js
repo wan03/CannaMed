@@ -5,7 +5,7 @@ module.exports = app => {
   app.get("/api/strains", apiController.getStrains);
 
   // Get News
-  app.get("/api/news", apiController.getNews)
+  app.get("/api/news", apiController.getNews);
 
   // Create User/Favorite association
   app.post("/api/userFavorite/create", apiController.createFavorite);
@@ -16,5 +16,5 @@ module.exports = app => {
   // Remove a favorite/user association
   app.post("/api/userFavorite/remove", apiController.removeFavorite);
 
-  app.get('/api/user_data', apiController.getUser);
+  app.get("/api/user_data", apiController.getUser);
 };

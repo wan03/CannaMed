@@ -18,7 +18,10 @@ module.exports = apiController = {
 
   // Create User/Favorite association
   createFavorite: (req, res) => {
-    var faveId = req.body.favid;
+    var faveId = req.body.favId;
+    console.log(req.body.favId);
+    console.log(req.body);
+    console.log(req.body.username);
     var user = req.body.username;
     return db.User.findOne({ where: { username: user } }).then(foundUser => {
       var userToAdd = foundUser;
@@ -49,13 +52,13 @@ module.exports = apiController = {
 
   // Remove a favorite/user association
   removeFavorite: (req, res) => {
-    var faveId = req.body.favid;
+    var faveId = req.body.favId;
     var user = req.body.username;
     return db.User.findOne({ where: { username: user } }).then(foundUser => {
-      var userToAdd = foundUser;
+      var userToRemove = foundUser;
       return db.Favorite.findOne({ where: { favoriteid: faveId } }).then(
         favorite => {
-          return favorite.removeUser(userToAdd).then(res.end());
+          return favorite.removeUser(userToRemove).then(res.end());
         }
       );
     });
