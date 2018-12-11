@@ -407,6 +407,7 @@ $(document).ready(() => {
   };
 
   $("div#favorites").on("click", ".removebtn", function() {
+    $(this).addClass("d-none");
     let user = $(this).attr("data-user");
     let favId = $(this).attr("data-favid");
     userInteraction.handleRemoveFavorite(favId, user);
