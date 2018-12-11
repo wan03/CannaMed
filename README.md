@@ -19,16 +19,17 @@ Cannabis affects people differently so, under the supervision of your doctor, it
 
 ## Team Members and Roles
 
-Jonatan - Back-end and Front-end
-Jason and Joao - Front-end
-Nicholas
+Jonatan - Back-end and Front-end  
+Jason and Joao - Front-end  
+Nicholas  
+
 
 ## Technologies used
 
 On this project we used:
 
-Front-end:
+Front-end:  
 HTML, CSS, Bootstrap and API
 
-Back-end:
+Back-end:  
 Node.JS, Express, Sequelize, Passport for authentication, API and Heroku. 
