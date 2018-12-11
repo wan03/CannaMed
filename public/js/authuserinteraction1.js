@@ -334,9 +334,12 @@ $(document).ready(() => {
           $("#sectionh").removeClass("d-none");
           $("#sectionhr").removeClass("d-none");
           $("#favorites").removeClass("d-none");
+          let div = $("<div>").attr("id", "favorites");
           if (dataF[0]) {
             for (let i = 0; i < dataF.length; i++) {
-              let card = $("<div>").addClass("card mb-4");
+              let card = $("<div>")
+                .addClass("card mb-4")
+                .appendTo(div);
               let overlay = $("<div>")
                 .addClass("view overlay")
                 .appendTo(card);
@@ -379,7 +382,7 @@ $(document).ready(() => {
                 })
                 .text("Remove Favorite!")
                 .appendTo(cardBody);
-              $("#favorites").append(card);
+              $("#favorites").replaceWith(div);
             }
           }
         });
@@ -407,7 +410,6 @@ $(document).ready(() => {
   };
 
   $("div#favorites").on("click", ".removebtn", function() {
-    $(this).addClass("d-none");
     let user = $(this).attr("data-user");
     let favId = $(this).attr("data-favid");
     userInteraction.handleRemoveFavorite(favId, user);
