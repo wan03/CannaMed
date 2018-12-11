@@ -5,8 +5,11 @@ module.exports = function(app) {
   // Load index page
   app.get("/", htmlController.getStrains);
 
-  // Load example page and pass in an example by id
+  // Load recipes
   app.get("/recipes", htmlController.getRecipes);
+
+  // Load all strains
+  app.get("/strains", htmlController.getAllStrains);
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

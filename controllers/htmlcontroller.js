@@ -10,6 +10,10 @@ module.exports = htmlController = {
     res.sendFile(path.join(__dirname + "/../public" + "/recipes.html"));
   },
 
+  getAllStrains: (req, res) => {
+    res.sendFile(path.join(__dirname + "/../public" + "/allstrains.html"));
+  },
+
   // Get favorites and users.
   userFavorite: (req, res) => {
     db.User.findOne({

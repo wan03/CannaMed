@@ -31,3 +31,9 @@
 .article_text {
   overflow: hidden;
 }
+
+#allCardNew > .card {
+  flex-direction: row;
+  margin-right: 1rem;
+  margin-bottom: .5rem;
+}
