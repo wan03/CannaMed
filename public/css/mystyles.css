@@ -22,8 +22,8 @@
 }
 
 .scrolling-wrapper > .card {
-  min-height: 300px;
-  min-width: 400px;
+  max-height: 25rem;
+  min-width: 22rem;
   margin-right: 1rem;
   margin-bottom: .5rem;
 }

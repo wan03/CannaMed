@@ -331,11 +331,20 @@ $(document).ready(() => {
         API.getFavorites(username).then(data => {
           let dataF = data.Favorites;
           $("#sectionf").removeClass("d-none");
-          $("#sectionh").removeClass("d-none");
+          $("#sectionh3").removeClass("d-none");
+          $("#sectionh5").removeClass("d-none");
           $("#sectionhr").removeClass("d-none");
           $("#favorites").removeClass("d-none");
-          let div = $("<div>").attr("id", "favorites");
+          let divTemp = $("<div>")
+            .addClass("scrolling-wrapper d-flex flex-row flex-nowrap")
+            .attr("id", "favorites");
+          $("#favorites").replaceWith(divTemp);
           if (dataF[0]) {
+            $("#sectionh5").addClass("d-none");
+            let div = $("<div>")
+              .addClass("scrolling-wrapper d-flex flex-row flex-nowrap")
+              .attr("id", "favorites");
+            console.log(dataF[0]);
             for (let i = 0; i < dataF.length; i++) {
               let card = $("<div>")
                 .addClass("card mb-4")
@@ -409,7 +418,7 @@ $(document).ready(() => {
     }
   };
 
-  $("div#favorites").on("click", ".removebtn", function() {
+  $("section#sectionf").on("click", ".removebtn", function() {
     let user = $(this).attr("data-user");
     let favId = $(this).attr("data-favid");
     userInteraction.handleRemoveFavorite(favId, user);

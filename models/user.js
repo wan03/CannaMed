@@ -8,12 +8,20 @@ module.exports = function(sequelize, DataTypes) {
 
     username: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: false,
+      len: {
+        args: [3, 32],
+        msg: "Username not in this length"
+      }
     },
 
     password: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      len: {
+        args: [3, 32],
+        msg: "password not in this length"
+      }
     },
 
     status: {
