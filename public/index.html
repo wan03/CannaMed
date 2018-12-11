@@ -2,263 +2,620 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie-edge">
-  <title>Varietals</title>
-  <meta name="decription" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"  crossorigin="anonymous">
- 
-  
-<link rel="stylesheet" type="text/css" href="css/style.css">
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CannaMed</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/stylesnav.css" rel="stylesheet">
+    <link href="css/mystyles.css" rel="stylesheet">
+   
 </head>
+
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-green">
+  <header>
 
-          <a class="navbar-brand" href="#"> <!----- CSS STYLE -->
-            <a href="https://www.facebook.com" class="social-container facebook">
-              <div class="social-cube">
-                <div class="front">
-                  Facebook
-                </div>
-                <div class="bottom">
-                  Follow us
-                </div>
-                </div>
-            </a>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-         
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+      <div class="container">
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="/">
+          <strong>CannaMed</strong>
+        </a>
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <!-- Left -->
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
               
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-             
-            <ul class="navbar-nav mr-auto mx-auto">
-
-              <li class="hvr-grow">
-                <a class="hvr-grow"  href="/">Home</a>
-              </li>&nbsp;&nbsp;&nbsp;
-
-              <li class="hvr-grow">
-                <a class="hvr-grow"  href="/profile">Profile</a>
-              </li>&nbsp;&nbsp;&nbsp;
-              
-              <li class="hvr-grow">
-                      <a class="hvr-grow"  href="/recipes">Recipes</a>
-              </li>&nbsp;&nbsp;&nbsp;
-
-              <li class="hvr-grow">
-                      <a class="hvr-grow"  href="/dashboard">Dashboard</a>
-              </li>
-
+              <a class="nav-link" href="/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/recipes">Recipes</a>
+              <!-- TODO Add to routes -->
+              <li class="nav-item">
+                <a class="nav-link" href="/allstrains">All Strains</a>
           </ul>
 
+          <!-- Right -->
+          <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+              <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://github.com/wan03/project2" class="nav-link border border-light rounded"
+                target="_blank">
+                <i class="fa fa-github mr-2"></i>Code on GitHub
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+    <!-- Navbar -->   
+
+    <!--Carousel Wrapper-->
+    <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+
+      <!--Indicators-->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+        <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+      </ol>
+      <!--/.Indicators-->
+
+      <!--Slides-->
+      <div class="carousel-inner" role="listbox">
+
+        <!--First slide-->
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('./img/carousel1.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            <!-- Mask & flexbox options-->
+            <div class="mask rgba-stylish-strong d-flex justify-content-center align-items-center">
+
+              <!-- Content -->
+              <div class="text-center white-text mx-5 wow fadeIn">
+                <h1 class="mb-4">
+                  <strong>Welcome to CannaMed</strong>
+                </h1>
+
+                <p>
+                  <strong>Best & free guide to medical cannabis in Floria</strong>
+                </p>
+
+                <p class="mb-4 d-none d-md-block">
+                  <strong>The most comprehensive list of strains that are available in Florida dispensaries, including list of ailemnts that it helps as well as the feelings it produces. Sign in to save your favorites!</strong>
+                </p>
+
+                <a data-target="#login_modal" data-toggle="modal" class="btn btn-outline-white btn-lg">Sign in
+                    <i class="fa fa-sign-in ml-2"></i>
+                  </a>
+              </div>
+              <!-- Content -->
+
+            </div>
+            <!-- Mask & flexbox options-->
 
           </div>
+        </div>
+        <!--/First slide-->
 
-          
-            </a>
-          </nav>
-        
+        <!--Second slide-->
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('./img/carousel2.jpg'); background-repeat: no-repeat; background-size: cover;">
 
-<section class="jumbotron" id="main_jumbotron"> <!---- CSS STYLE  ---->
-  
+            <!-- Mask & flexbox options-->
+            <div class="mask rgba-stylish-strong d-flex justify-content-center align-items-center">
 
-  
-<div class="container row">
+              <!-- Content -->
+              <div class="text-center white-text mx-5 wow fadeIn">
+                <h1 class="mb-4">
+                  <strong>Welcome to CannaMed</strong>
+                </h1>
+
+                <p>
+                  <strong>Best & free guide to medical cannabis in Floria</strong>
+                </p>
+
+                <p class="mb-4 d-none d-md-block">
+                  <strong>The most comprehensive list of strains that are available in Florida dispensaries, including list of ailemnts that it helps as well as the feelings it produces. Sign in to save your favorites!</strong>
+                </p>
+
+                <a data-target="#login_modal" data-toggle="modal" class="btn btn-outline-white btn-lg">Sign in
+                    <i class="fa fa-sign-in ml-2"></i>
+                  </a>
+              </div>
+              <!-- Content -->
+
+            </div>
+            <!-- Mask & flexbox options-->
+
+          </div>
+        </div>
+        <!--/Second slide-->
+
+        <!--Third slide-->
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('./img/carousel3.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            <!-- Mask & flexbox options-->
+            <div class="mask rgba-stylish-strong d-flex justify-content-center align-items-center">
+
+              <!-- Content -->
+              <div class="text-center white-text mx-5 wow fadeIn .text-light">
+                <h1 class="mb-4">
+                  <strong>Welcome to CannaMed</strong>
+                </h1>
+
+                <p>
+                  <strong>Best & free guide of responsive web design</strong>
+                </p>
+
+                <p class="mb-4 d-none d-md-block">
+                  <strong>The most comprehensive list of strains that are available in Florida dispensaries, including list of ailemnts that it helps as well as the feelings it produces. Sign in to save your favorites!</strong>
+                </p>
+
+                <a data-target="#login_modal" data-toggle="modal" class="btn btn-outline-white btn-lg">Sign in
+                  <i class="fa fa-sign-in ml-2"></i>
+                </a>
+              </div>
+              <!-- Content -->
+
+            </div>
+            <!-- Mask & flexbox options-->
+
+          </div>
+        </div>
+        <!--/Third slide-->
+
+      </div>
+      <!--/.Slides-->
+
+      <!--Controls-->
+      <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+      <!--/.Controls-->
+
+    </div>
+    <!--/.Carousel Wrapper-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="login_modal" tabindex="-1" role="dialog" aria-labelledby="login_modal_label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-center" id="login_modal_label">Login or Sign up!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                      <label for="inputUsernameEmail">Username</label>
+                      <input type="text" class="form-control" id="inputUsernameEmail1">
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword">Password</label>
+                      <input type="password" class="form-control" id="inputPassword1">
+                    </div>
+                    
+                    
+                    
+                    <div class="row">
+                        <div class="text-left col-6">                  
+                            <button type="submit" class="float-right btn btn btn-primary" id="sign_up">
+                                Sign Up
+                              </button>                   
+                          </div>
+                          <div class="text-right col-6">
+                            <button type="submit" class="float-left btn btn btn-primary" id="log_in">
+                                Log In
+                              </button> 
+                            </div>
+                    </div>
+                    
+    
+                  </form>
+            </div><!---modal body-->
+          </div>
+        </div>
+      </div>
     
 
- 
-<div class="col-10 text-center">
-  
-  <h1 class="jumbotron-heading">THC Files</h1>
-  <span class="pulse">Latest data reviews and more...</span>
-  
+  </header>
+<br>
+  <!--Main layout-->
+  <main>
+    <div class="container">
+
+      <section> <!-- Featured Strains -->
+
+        <h3 class="h3 text-center mb-5">Featured Strains</h3>
+      <!-- Card deck -->
+<div class="card-deck" id="featured"> 
+
 </div>
+<!-- Card deck -->
+</section> <!-- Featured Strains -->
 
-  
-<div class="col-2 float-right text-center" id="jumbotron_login"> <!----- CSS STYLE ----->
-   <!-- Button triggers for modals -->
-<button type="button" class="hvr-grow" data-toggle="modal" data-target="#login_modal">
-    Log In
-  </button>
-<hr>
-<button type="button" class="hvr-grow" data-toggle="modal" data-target="#login_modal">
-    Sign Up
-  </button>
+      <hr class="my-5 d-none" id="sectionhr">
+      <section class="d-none" id="sectionf"> <!-- Favorite Strains -->
 
-  
-  
-  <!-- Modal 1 -->
-  <div class="modal fade" id="login_modal" tabindex="-1" role="dialog" aria-labelledby="login_modal_label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-center" id="login_modal_label">Login or Sign up!</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+        <h3 class="h3 text-center mb-5 d-none">Favorite Strains</h3>
+      <!-- Card deck -->
+<div class="scrolling-wrapper d-flex flex-row flex-nowrap d-none" id="favorites"> 
+
+</div>
+<!-- Card deck -->
+</section> <!-- Favorite Strains -->
+      <hr class="my-5">
+
+      <!--Section: About Medical Cannabis-->
+      <section>
+
+        <h3 class="h3 text-center mb-5">About Medical Cannabis</h3>
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12 px-4">
+
+            <!--First row-->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fa fa-leaf fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title">Cannabis</h5>
+                <p class="grey-text"> Cannabis is a plant-based medicine from the Cannabis sativa or Cannabis indica species with three major active compounds: THC, CBD, and CBN.</p>
+              </div>
+            </div>
+            <!--/First row-->
+
+            <div style="height:30px"></div>
+
+            <!--Second row-->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fa fa-medkit fa-2x blue-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title">Benefits</h5>
+                <p class="grey-text">The health benefits of medical marijuana include relief from pain and muscle spasm, nausea associated with chemotherapy, and anorexia. Benefits are seen in immune function, neuroplasticity, emotional and mood regulation, vascular health and digestive function.
+                </p>
+              </div>
+            </div>
+            <!--/Second row-->
+
+            <div style="height:30px"></div>
+
+            <!--Third row-->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fa fa-graduation-cap fa-2x cyan-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title">Side Effects</h5>
+                <p class="grey-text">The side effects of medical marijuana are minimal when used at low doses and include dry mouth and fatigue. At higher doses, side effects include dizziness, paranoia, and psychoactive effects.</p>
+              </div>
+            </div>
+            <!--/Third row-->
+
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12">
+
+            <p class="h5 text-center mb-4">Watch this video to learn more!</p>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/UWaQh1BhIJY" allowfullscreen></iframe>
+            </div>
+          </div>
+          <!--/Grid column-->
+
         </div>
-        <div class="modal-body">
-            <form role="form">
-                <div class="form-group">
-                  <label for="inputUsernameEmail">Username or Email</label>
-                  <input type="text" class="form-control" id="inputUsernameEmail1">
-                </div>
-                <div class="form-group">
-                  <label for="inputPassword">Password</label>
-                  <input type="password" class="form-control" id="inputPassword1">
-                </div>
-                
-                
-                
-                <div class="row justify-content-around">
-                    <div class="checkbox float-left col-4">
+        <!--/Grid row-->
+
+      </section>
+      <!--Section: Main features & Quick Start-->
+
+      <hr class="my-5">
+
+      <!--Section: Dispensaries in Florida-->
+      <section>
+
+        <h2 class="my-5 h3 text-center">Dispensaries in Florida</h2>
+
+        <!--First row-->
+        <div class="row features-small mb-5 mt-3 wow fadeIn">
+
+          <!--First column-->
+          <div class="col-md-4">
+            <!--First row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fa fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Dadeland</h6>
+                <p class="grey-text">9002 Dadeland Blvd
+                  Miami, FL, 33156 
+                  USA
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/First row-->
+
+            <!--Second row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fa fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Daytona</h6>
+                <p class="grey-text">148 North Federal Highway
+                  Deerfield Beach Florida 33441 
+                  USA
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Second row-->
+
+            <!--Third row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fa fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Deerfield</h6>
+                <p class="grey-text">148 North Federal Highway
+                  Deerfield Beach Florida 33441 
+                  USA</p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Third row-->
+
+            <!--Fourth row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fa fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">East Orlando</h6>
+                <p class="grey-text">775 N Semoran Blvd
+                  Orlando FL 32807 
+                  USA</p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Fourth row-->
+          </div>
+          <!--/First column-->
+
+          <!--Second column-->
+          <div class="col-md-4 flex-center">
+            <img src="./img/curaleaf.jpg" alt="MDB Magazine Template displayed on iPhone" class="z-depth-0 img-fluid">
+          </div>
+          <!--/Second column-->
+
+          <!--Third column-->
+          <div class="col-md-4 mt-2">
+            <!--First row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fa fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Ft. Myers</h6>
+                <p class="grey-text">4480 Fowler Street
+                  Ft. Myers, FL, 33901 
+                  USA
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/First row-->
+
+            <!--Second row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fa fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Ft. Pierce</h6>
+                <p class="grey-text">3218 S. US Highway 1
+                  Ft. Pierce Florida 34982 
+                  USA</p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Second row-->
+
+            <!--Third row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fa fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Jacksonville</h6>
+                <p class="grey-text">6361 103rd Street
+                  Jacksonville, FL, 32210 
+                  USA
                   
-                        <label>
-                          <input type="checkbox">
-                          Remember me </label>
-                          
-                      </div>
-                      <button type="submit" class="float-right btn btn btn-primary col-4" id="sign_up">
-                          Sign Up
-                        </button>
-                </div>
-                
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Third row-->
 
-                <div class="row justify-content-around">
-                    <button type="submit" class="float-left btn btn btn-primary col-4" id="log_in">
-                        Log In
-                      </button>
+            <!--Fourth row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fa fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Lakeland</h6>
+                <p class="grey-text">3145 US HWY 98 N
+                  Lakeland Florida 33805 
+                  USA</p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Fourth row-->
+          </div>
+          <!--/Third column-->
 
-                      <a class="float-right col-4" href="#">Forgot password?</a>
+        </div>
+        <!--/First row-->
 
+      </section>
 
-                </div>
-                
+      <hr class="mb-5">
 
-              </form>
-        </div><!---modal body-->
-        
-      </div>
-    </div>
-  </div>
-</div>
+     <!--Section: News-->
+      <section>
 
- 
+        <h2 class="my-5 h3 text-center">Recent News</h2>
 
-</section>              
+        <!--First row-->
+        <div class="row features-small mt-5 wow fadeIn" id="first_news">
 
+        </div>
+        <!--/First row-->
 
+        <!--Second row-->
+        <div class="row features-small mt-4 wow fadeIn" id="second_news">
 
-<!----- HARD LINE (there was one here)-->
+        </div>
+        <!--/Second row-->
 
-
-
-<div class="row"> 
-
-    <!-- justify-content-around -->
-
-
-
-  <div class="col-lg-8" id="featuredtop">  <!---- CSS STYLE --->
-    <div id="featured"></div>
-  </div>
-  <br>
-  <p></p>
-  <div class="col-lg-8" id="favoritestop">  <!---- CSS STYLE --->
-    <div id="favorites"></div>
-  </div> 
-
-  <div class="scrolling-wrapper" id="all_cardtop">
-    <h2 class="">All Strains</h2>
-    <div id="all_card"></div>
-  </div>
-</div>  <!--- row /div --> 
+      </section>
+      <hr class="my-5">
+<!--Section: All Strains-->
+      <section> 
+        <h2 class="my-5 h3 text-center">All Strains</h2>
+<div class="container-fluid"> <!-- container -->
   
-<div class="col-sm-2 float-right">
-  <div id="article"></div>
+          <div class="scrolling-wrapper d-flex flex-row flex-nowrap" id="all_card"><!-- Wrapper -->  
 
-</div> <!---- ROW /div -->
+            </div> <!-- scrolling wrapper -->
+          </div> <!-- container -->
+      </section> <!--Section: All Strains-->
 
-<!--- smoke canvas -->
-
-<canvas id="canvas"></canvas>
-                <script src="js/smoke.js"></script>
-                <a href="https://github.com/bijection/smoke.js" class="noselect">
-                            </a>
-        
-                <script>
-                    
-            var canvas = document.getElementById('canvas')
-            var ctx = canvas.getContext('2d')
-            canvas.width = innerWidth
-            canvas.height =innerHeight
-        
-            var party = smokemachine(ctx, [54, 16.8, 18.2])
-            party.start() // start animating
-        
-            onmousemove = function (e) {
-                var x = e.clientX
-                var y = e.clientY
-                var n = .5
-                var t = Math.floor(Math.random() * 200) + 3800
-                party.addsmoke(x, y, n, t)
-            }
-        
-            setInterval(function(){
-                party.addsmoke(innerWidth/2, innerHeight, 1)
-            }, 100)
-        
-        
-                </script>
-<hr>
-
-<div id="loading-page">
-    <div id="loader">
-      <div class="particles element">
-        <div class="spark1 spark element"><div class="particle1 particle element"></div></div>
-        <div class="spark2 spark element"><div class="particle2 particle element"></div></div>
-        <div class="spark3 spark element"><div class="particle3 particle element"></div></div>
-        <div class="spark4 spark element"><div class="particle4 particle element"></div></div>
-        <div class="spark5 spark element"><div class="particle5 particle element"></div></div>
-        <div class="spark6 spark element"><div class="particle6 particle element"></div></div>
-        <div class="spark7 spark element"><div class="particle7 particle element"></div></div>
-        <div class="spark8 spark element"><div class="particle8 particle element"></div></div>
-        <div class="spark9 spark element"><div class="particle9 particle element"></div></div>
-        <div class="spark10 spark element"><div class="particle10 particle element"></div></div>
-        <div class="spark11 spark element"><div class="particle11 particle element"></div></div>
-        <div class="spark12 spark element"><div class="particle12 particle element"></div></div>
-      </div>
-      <div class="ray element"></div>
-      <div class="sphere element"></div>
     </div>
-  </div>
-  <div id="lastray" class="element"></div>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  <script src="js/master.js" charset="utf-8"></script>
-  <!-- <script src="js/particles.js" charset="utf-8"></script> -->
-  <script src="js/authuserinteraction.js"></script>
-  <script src="js/login.js"></script>
+  </main>
+  <!--Main layout-->
 
-<div class="container">
+  <!--Footer-->
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">    
 
-   
-<footer class="text-center text-white">
-  
-    <p>THC Files Inc 2018</p> 
+    <!-- Social icons -->
+    <div class="pb-4">
+      <a href="https://www.facebook.com/mdbootstrap" target="_blank">
+        <i class="fa fa-facebook mr-3"></i>
+      </a>
 
-</footer>
+      <a href="https://twitter.com/MDBootstrap" target="_blank">
+        <i class="fa fa-twitter mr-3"></i>
+      </a>
 
+      <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
+        <i class="fa fa-youtube mr-3"></i>
+      </a>
 
+      <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
+        <i class="fa fa-google-plus mr-3"></i>
+      </a>
+
+      <a href="https://dribbble.com/mdbootstrap" target="_blank">
+        <i class="fa fa-dribbble mr-3"></i>
+      </a>
+
+      <a href="https://pinterest.com/mdbootstrap" target="_blank">
+        <i class="fa fa-pinterest mr-3"></i>
+      </a>
+
+      <a href="https://github.com/wan03/project2" target="_blank">
+        <i class="fa fa-github mr-3"></i>
+      </a>
+
+      <a href="http://codepen.io/mdbootstrap/" target="_blank">
+        <i class="fa fa-codepen mr-3"></i>
+      </a>
+    </div>
+    <!-- Social icons -->
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+      © 2018 Copyright:
+      <a href="/"> CannaMed </a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/authuserinteraction1.js"></script>
+      <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>
 </body>
-
-
 
 </html>
