@@ -10,6 +10,9 @@ Cannabis affects people differently so, under the supervision of your doctor, it
 
 We have strived to provide the most accuarate information possible but we did not collect the data ourselves so we cannot gurantee the accuracy of it. This website is for informational purposes only.
 
+## Preview
+
+!["Initial Design"](./public/images/CannMed.png)
 
 ## Initial Designs
 
