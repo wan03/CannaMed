@@ -12,7 +12,7 @@ We have strived to provide the most accuarate information possible but we did no
 
 ## Preview
 
-!["Front Page"](./public/images/CannMed.png)
+!["Front Page"](./public/images/CannMed.PNG)
 
 ## Initial Designs
 
